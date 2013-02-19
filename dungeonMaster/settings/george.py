@@ -1,5 +1,3 @@
-from common import *
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -25,6 +23,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'system',
 	'gm',
 	'character',
     # Uncomment the next line to enable the admin:
