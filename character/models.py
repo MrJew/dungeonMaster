@@ -13,9 +13,6 @@ class Character(models.Model):
     #character = models.ForeignKey(User)
     sp = models.IntegerField()
     profession = models.ManyToManyField(Profession)
-    weapons = models.ManyToManyField(Weapon)
-    misc = models.ManyToManyField(Misc)
-    armor = models.ManyToManyField(Armor)
     quests = models.ManyToManyField(Quest)
     effects = models.ManyToManyField(Effect)
 
@@ -46,3 +43,15 @@ class Race(models.Model):
     dexMax = models.IntegerField()
     vitality = models.IntegerField()
     speed = models.IntegerField()
+
+class Weapon(models.Model):
+    owner = models.ForeignKey(Character)
+    name = models.CharField(max_length=50)
+
+class Misc(models.Model):
+    owner = models.ForeignKey(Character)
+    name = models.CharField(max_length=50)
+
+class Armor(models.Model):
+    owner = models.ForeignKey(Character)
+    name = models.CharField(max_length=50)
