@@ -1,6 +1,7 @@
 from django.db import models
 from character.models import *
 from system.models import *
+from character.models import Character
 from django.contrib.auth.models import User, UserManager
 
 
@@ -23,6 +24,7 @@ class Notes(models.Model):
 # GM craetes quesets that can be assigned to players after that
 class Quest(models.Model):
     gm = models.ForeignKey(GM)
+    players = models.ManyToManyField(Character)
     title = models.CharField(max_length=50)
     snippet = models.CharField(max_length=400)
     xp = models.IntegerField()
