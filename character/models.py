@@ -85,6 +85,27 @@ class Stats(models.Model):
     beauty = models.IntegerField()
     beautyMod = models.IntegerField(default=0)
 
+    def getStr(self):
+        return self.str + self.strMod
+
+    def getAgi(self):
+        return self.agi + self.agiMod
+
+    def getInt(self):
+        return self.int + self.intMod
+
+    def getDex(self):
+        return self.dex + self.dexMod
+
+    def getBeauty(self):
+        return self.beauty + self.beautyMod
+
+    def getSpeed(self):
+        return self.speed + self.speedMod
+
+    def getVit(self):
+        return self.vitality + self.vitMod
+
 # Items there are 3 types with several subtypes
 class Item(models.Model):
     name = models.CharField(max_length=50)
