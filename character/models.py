@@ -1,6 +1,6 @@
 from django.db import models
 from system.models import *
-from gm.models import Quest
+#from gm.models import Quest
 from django.contrib.auth.models import User, UserManager
 
 Item_CHOICES=(("Sword","Sword"),
@@ -55,7 +55,6 @@ class Race(models.Model):
 class Character(User):
     sp = models.IntegerField()
     profession = models.ManyToManyField(Profession)
-    quests = models.ManyToManyField(Quest)
     effects = models.ManyToManyField(Effect)
     race = models.ForeignKey(Race)
 
@@ -65,7 +64,8 @@ class Character(User):
 # Stats containts the statistics a player can have
 class Stats(models.Model):
     character = models.ForeignKey(Character)
-    xp = models.IntegerField()
+    level = models.IntegerField(default=0)
+    xp = models.IntegerField(default=0)
     str = models.IntegerField()
     strMax = models.IntegerField()
     strMod = models.IntegerField(default=0)
