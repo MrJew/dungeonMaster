@@ -63,7 +63,7 @@ print "Creating Characters..."
 c1 = Character(username="Dulan",race=race1)
 c1.sp = 0
 c2 = Character(username="Enferia",race=race2)
-c2.sp =0
+c2.sp = 0
 c1.save()
 c2.save()  # save before creating a many to many relationship
 c1.profession.add(prof1)

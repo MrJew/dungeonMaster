@@ -4,10 +4,8 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
-    ur
+urlpatterns = patterns(
     url(r'^dungeonMaster/', include('system.urls')),
     url(r'^dungeonMaster/', include('gm.urls')),
     url(r'^dungeonMaster/', include('character.urls')),
-
 )

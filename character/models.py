@@ -24,6 +24,8 @@ Item_CHOICES=(("Sword","Sword"),
               ("Belt","Belt"),
               ("Other","Other"))
 
+############################################################# Models ###################################################
+
 # Create your models here.
 # Ability has a one to many relation with the Formulas
 class Ability(models.Model):
@@ -53,6 +55,7 @@ class Race(models.Model):
 
 # Character contains the User model and the objects it's composed of
 class Character(User):
+    # default params
     sp = models.IntegerField()
     profession = models.ManyToManyField(Profession)
     quests = models.ManyToManyField(Quest)
@@ -106,5 +109,8 @@ class Inventory(models.Model):
 
     def __unicode__(self):
         return self.item
+
+################################################################## Forms ###############################################
+
 
 
