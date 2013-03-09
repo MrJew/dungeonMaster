@@ -1,8 +1,6 @@
 from common import *
 import os
 
-ROOTDIR = os.path.abspath(os.path.dirname(__file__))
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
