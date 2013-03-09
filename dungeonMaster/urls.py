@@ -5,7 +5,6 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    ur
     url(r'^dungeonMaster/', include('system.urls')),
     url(r'^dungeonMaster/', include('gm.urls')),
     url(r'^dungeonMaster/', include('character.urls')),

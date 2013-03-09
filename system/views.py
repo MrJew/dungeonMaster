@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from character.models import *
 import string, operator
+from random import randint
 
 def main(request):
     context = RequestContext(request)
@@ -36,7 +37,8 @@ def getValues(c):
               'vit': s.getVit(),
               'speed': s.getSpeed(),
               'beauty': s.getBeauty(),
-              'lvl':c.l}
+              'lvl':s.xp/1000,
+              'dice': randint(1,6)}
     return values
 
 def formToString(s,v):

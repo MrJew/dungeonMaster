@@ -64,7 +64,6 @@ class Character(User):
 # Stats containts the statistics a player can have
 class Stats(models.Model):
     character = models.ForeignKey(Character)
-    level = models.IntegerField(default=0)
     xp = models.IntegerField(default=0)
     str = models.IntegerField()
     strMax = models.IntegerField()
