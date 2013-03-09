@@ -1,0 +1,28 @@
+.top {
+    text-align: center;
+}
+
+.bot {
+    text-align: center;
+}
+
+.questinv{
+    text-align: center;
+
+}
+
+.skills{
+    text-align: center;
+
+}
+
+.stats{
+    text-align: center;
+    border: 2px solid;
+    border-color: black;
+}
+
+.console{
+    text-align: center;
+    background-color: #0e90d2;
+}

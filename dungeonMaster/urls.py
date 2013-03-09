@@ -5,13 +5,8 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'dungeonMaster.views.home', name='home'),
-    # url(r'^dungeonMaster/', include('dungeonMaster.foo.urls')),
+    url(r'^dungeonMaster/', include('system.urls')),
+    url(r'^dungeonMaster/', include('gm.urls')),
+    url(r'^dungeonMaster/', include('character.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
 )
