@@ -7,12 +7,10 @@
 }
 
 .questinv{
+    border: 2px solid;
+    border-color: black;
     text-align: center;
-
-}
-
-.skills{
-    text-align: center;
+    height: 700px;
 
 }
 
@@ -20,9 +18,31 @@
     text-align: center;
     border: 2px solid;
     border-color: black;
+    height: 700px;
+
 }
 
 .console{
+    border: 2px solid;
+    border-color: black;
     text-align: center;
+    background-color: #0e90d2;
+    height: 700px;
+
+}
+
+.skills{
+    margin-top: 50px;
+    border: 2px solid;
+    border-color: black;
+    text-align: center;
+    height:200px;
+}
+
+.cellstats {
+    background-color: #0e90d2;
+}
+
+.cellability {
     background-color: #0e90d2;
 }

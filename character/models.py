@@ -1,8 +1,8 @@
-from twisted.internet import default
 from django.db import models
-from system.models import *
-#from gm.models import Quest
+from system.models import Effect,Formula
 from django.contrib.auth.models import User, UserManager
+
+
 
 Item_CHOICES=(("Sword","Sword"),
               ("Bow","Bow"),
@@ -25,17 +25,7 @@ Item_CHOICES=(("Sword","Sword"),
               ("Belt","Belt"),
               ("Other","Other"))
 
-############################################################# Models ###################################################
 
-# Create your models here.
-# Ability has a one to many relation with the Formulas
-class Ability(models.Model):
-    name = models.CharField(max_length=50)
-    level = models.IntegerField()
-    formula = models.ForeignKey(Formula)
-
-    def __unicode__(self):
-        return self.name
 
 # Race stores the basic and max stats a character will use
 class Race(models.Model):
@@ -58,7 +48,6 @@ class Race(models.Model):
 class Character(User):
     # default params
     sp = models.IntegerField(default=0)
-    profession = models.ManyToManyField(Profession)
     effects = models.ManyToManyField(Effect)
     race = models.ForeignKey(Race)
 
@@ -109,8 +98,9 @@ class Stats(models.Model):
     def getVit(self):
         return self.vitality + self.vitMod
 
-# Items there are 3 types with several subtypes
+
 class Item(models.Model):
+    """Items there are 3 types with several subtypes"""
     name = models.CharField(max_length=50)
     type = models.CharField(max_length=40,choices=Item_CHOICES)
     dmg = models.CharField(max_length=100)
@@ -131,7 +121,17 @@ class Inventory(models.Model):
     def __unicode__(self):
         return self.item
 
-################################################################## Forms ###############################################
+from facade import comfunc
+
+# Create your models here.
+# Ability has a one to many relation with the Formulas
+class Ability(models.Model):
+    name = models.CharField(max_length=50)
+    level = models.IntegerField()
+    formula = models.ForeignKey(Formula)
+
+    def __unicode__(self):
+        return self.name
 
 
 

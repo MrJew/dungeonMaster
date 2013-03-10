@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Creator</title>
+</head>
+<body>
+<FORM id="eff_crt_form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% for field in proform %}
+        {% if field.label == "Skills" %}
+            </br>
+            <div style="overflow:scroll; width: 200px;height: 100px">
+                {{field}}
+            </div>
+        {% else %}
+            {{field.errors}}
+            {{field.label}}
+            {{field}}
+            {{field.help_text}}
+         </br>
+        {% endif %}
+    {% endfor %}
+    <INPUT type="submit" name="submit" value="submit" />
+</FORM>
+</body>
+</html>

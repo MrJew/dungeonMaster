@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creating an Effect</title>
+</head>
+<body>
+{% if correct.as_p %}
+    Follow the correct patterns for formula creation !
+{% else %}
+    <FORM id="eff_crt_form" method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{ efform.as_p }}
+         <INPUT type="submit" name="submit" value="submit" />
+    </FORM>
+{% endif %}
+</body>
+</html>
