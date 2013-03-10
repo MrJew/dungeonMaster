@@ -15,7 +15,7 @@ DATABASES = {
 ROOT_URLCONF = 'dungeonMaster.urls'
 
 TEMPLATE_DIRS = (
-    '/ivaylo/GITHUB/dungeonMaster/templates',
+    '/home/ivaylo/GITHUB/dungeonMaster/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -32,7 +32,7 @@ INSTALLED_APPS = (
     'gm',
     'character',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -45,9 +45,8 @@ STATICFILES_DIRS = (
 )
 
 MIDDLEWARE_CLASSES = (
-# ...
-
-# ...
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
 INTERNAL_IPS = ('127.0.0.1',)

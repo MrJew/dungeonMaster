@@ -5,10 +5,10 @@
 </head>
 <body>
 {% if registered %}
-    <A href="/rango">DungeonMaster</A> says: A great warrior has been born
+    A great hero with that name exists.
 {% else %}
-You must gibe birth to your mighty hero here:
-<FORM id="charform" method="post" action="/character/register/" enctype="multipart/form-data">
+You must give birth to your mighty hero here:
+<FORM id="char_form" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ uniform.as_p }}
     <INPUT type="submit" name="submit" value="submit" />

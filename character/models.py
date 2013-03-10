@@ -1,3 +1,4 @@
+from twisted.internet import default
 from django.db import models
 from system.models import *
 #from gm.models import Quest
@@ -56,7 +57,7 @@ class Race(models.Model):
 # Character contains the User model and the objects it's composed of
 class Character(User):
     # default params
-    sp = models.IntegerField()
+    sp = models.IntegerField(default=0)
     profession = models.ManyToManyField(Profession)
     effects = models.ManyToManyField(Effect)
     race = models.ForeignKey(Race)

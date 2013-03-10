@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<FORM id="desc_form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ descform.as_p }}
+    <INPUT type="submit" name="submit" value="submit" />
+</FORM>
+</body>
+</html>
