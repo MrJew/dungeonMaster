@@ -5,7 +5,6 @@ from django.template.context import RequestContext
 from character.forms import CharForm, CharDescForm
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from django.contrib.auth.models import User
 from character.models import Character, Race
 from gm.models import GM
 

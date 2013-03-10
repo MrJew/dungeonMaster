@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c96d1e9e-ba48-414b-b962-f5c4f2c5f8d1" name="Default" comment="" />
     <ignored path="dungeonMaster.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,6 +27,14 @@
     <file path="/effects.html" changelist="c96d1e9e-ba48-414b-b962-f5c4f2c5f8d1" time="1362928331244" ignored="false" />
     <file path="/skills.html" changelist="c96d1e9e-ba48-414b-b962-f5c4f2c5f8d1" time="1362930728153" ignored="false" />
     <file path="/prof.html" changelist="c96d1e9e-ba48-414b-b962-f5c4f2c5f8d1" time="1362931017989" ignored="false" />
+=======
+    <list default="true" id="1474c90b-fd0c-4b2f-820e-a8b3ebfadcf1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampleData.py" afterPath="$PROJECT_DIR$/sampleData.py" />
+    </list>
+    <ignored path="dungeonMaster.iws" />
+    <ignored path=".idea/workspace.xml" />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +51,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/forms.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,36 +59,45 @@
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/system/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="22" selection-start="1903" selection-end="1903" vertical-scroll-proportion="-0.625">
+              <folding />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/views.py">
+      <file leaf-file-name="stats.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/character/stats.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="102" column="36" selection-start="2606" selection-end="2606" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#26#68#0" expanded="true" />
               </folding>
+=======
+            <state line="3" column="14" selection-start="59" selection-end="59" vertical-scroll-proportion="-1.875">
+              <folding />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="13" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sampleData.py" pinned="false" current="false" current-in-tab="false">
+=======
+      <file leaf-file-name="sampleData.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sampleData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="9" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0">
+            <state line="83" column="13" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.63829786">
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -86,10 +105,45 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/character/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="26" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state line="32" column="9" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
+=======
+            <state line="6" column="27" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
+              <folding />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/system/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="20" column="35" selection-start="637" selection-end="652" vertical-scroll-proportion="0.34013605">
+=======
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/character/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="86" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
               <folding />
             </state>
           </provider>
@@ -113,6 +167,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/templates/register/register.html" />
         <option value="$PROJECT_DIR$/dungeonMaster/settings/ivo.py" />
         <option value="$PROJECT_DIR$/character/models.py" />
@@ -129,14 +184,39 @@
         <option value="$PROJECT_DIR$/system/views.py" />
         <option value="$PROJECT_DIR$/templates/system/create/prof.html" />
         <option value="$PROJECT_DIR$/system/urls.py" />
+=======
+        <option value="$PROJECT_DIR$/dungeonMaster/settings/george.py" />
+        <option value="$PROJECT_DIR$/dungeonMaster/settings/common.py" />
+        <option value="$PROJECT_DIR$/system/views.py" />
+        <option value="$PROJECT_DIR$/static/main.css" />
+        <option value="$PROJECT_DIR$/admin.py" />
+        <option value="$PROJECT_DIR$/gm/forms.py" />
+        <option value="$PROJECT_DIR$/system/urls.py" />
+        <option value="$PROJECT_DIR$/dungeonMaster/urls.py" />
+        <option value="$PROJECT_DIR$/character/views.py" />
+        <option value="$PROJECT_DIR$/gm/models.py" />
+        <option value="$PROJECT_DIR$/facade/comfunc" />
+        <option value="$PROJECT_DIR$/system/models.py" />
+        <option value="$PROJECT_DIR$/character/models.py" />
+        <option value="$PROJECT_DIR$/templates/system/main.html" />
+        <option value="$PROJECT_DIR$/templates/character/stats.html" />
+        <option value="$PROJECT_DIR$/sampleData.py" />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="1440" />
     <option name="y" value="55" />
     <option name="width" value="1920" />
     <option name="height" value="1025" />
+=======
+    <option name="x" value="-1872" />
+    <option name="y" value="-4" />
+    <option name="width" value="1873" />
+    <option name="height" value="1085" />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -192,6 +272,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -232,11 +313,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+=======
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="register" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -254,11 +333,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="register" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="char" />
+              <option name="myItemId" value="character" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -286,6 +361,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -319,6 +395,9 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dungeonMaster" />
+=======
+              <option name="myItemId" value="facade" />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,6 +411,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="dungeonMaster" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -350,6 +430,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+=======
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
               <option name="myItemId" value="character" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -361,7 +443,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tennis_admin/teamk/tennis/implementation/tennis" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/character" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dungeonMaster/settings" />
+      <recent name="$PROJECT_DIR$/dungeonMaster/settings/settings" />
+    </key>
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
   </component>
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -437,14 +533,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="1440" y="55" width="1920" height="1025" extended-state="7" />
+=======
+    <frame x="-1872" y="-4" width="1873" height="1085" extended-state="6" />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24279615" sideWeight="0.9669862" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.184514" sideWeight="0.9700214" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -515,29 +621,33 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/templates/register/register.html">
+=======
+    <entry file="file://$PROJECT_DIR$/dungeonMaster/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="4" selection-start="296" selection-end="348" vertical-scroll-proportion="0.21910113">
-          <folding />
-        </state>
+        <state line="6" column="1" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gm/views.py">
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gm/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="12" selection-start="64" selection-end="64" vertical-scroll-proportion="0.01655629" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gm/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="238" selection-end="238" vertical-scroll-proportion="0.09857612">
+        <state line="2" column="0" selection-start="68" selection-end="68" vertical-scroll-proportion="0.03311258">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/bootstrap/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/static/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -546,14 +656,29 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/character/models.py">
+=======
+    <entry file="file://$PROJECT_DIR$/gm/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="34" selection-start="2722" selection-end="2722" vertical-scroll-proportion="0.016429354">
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="2" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.03311258" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/system/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.03311258" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/character/views.py">
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.11589404" />
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/character/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="104" selection-start="582" selection-end="682" vertical-scroll-proportion="0.31215772">
@@ -564,14 +689,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/register/char/describe.html">
+=======
+    <entry file="file://$PROJECT_DIR$/facade/comfunc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="65" selection-end="232" vertical-scroll-proportion="0.101123594">
+        <state line="0" column="34" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/character/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/system/main.html">
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
       <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="22" selection-start="1903" selection-end="1903" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/character/stats.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="64" column="92" selection-start="2336" selection-end="2424" vertical-scroll-proportion="0.8849945">
           <folding>
             <element signature="e#26#61#0" expanded="true" />
@@ -605,28 +741,61 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/system/create/effects.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="65" selection-end="237" vertical-scroll-proportion="0.101123594">
+=======
+        <state line="3" column="14" selection-start="59" selection-end="59" vertical-scroll-proportion="-1.875">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/system/create/skills.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="171" selection-end="171" vertical-scroll-proportion="0.13483146">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/character/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="26" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/character/urls.py">
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="86" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="27" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/system/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/sampleData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="13" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.63829786">
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/sampleData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="9" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0">
@@ -643,6 +812,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> a9ad81dd8d037a0b90371b98a341b878a0de33eb
   </component>
 </project>
 

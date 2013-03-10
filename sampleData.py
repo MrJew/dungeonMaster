@@ -66,17 +66,25 @@ e4 = Effect(name='Poison',effect=" -10 hp")
 e4.save()
 
 print "Creating Skills..."
-skill1 = Skill(name="Rapid Fire",effect=" -1 ap, -1 dmg d",lvl=3,isPassive=False)
-skill2 = Skill(name="Precision Shot",effect="+2 ap , +1 dmg d",lvl=6,isPassive=False)
-skill3 = Skill(name="Shout",effect="+4 sre",lvl=2,isPassive=False)
-skill4 = Skill(name = "Keen eye",effect="+3 agi",lvl=3,isPassive=True)
+skill1 = Skill(name="Rapid Fire",lvl=3,isPassive=False)
+skill2 = Skill(name="Precision Shot",lvl=6,isPassive=False)
+skill3 = Skill(name="Shout",lvl=2,isPassive=False)
+skill4 = Skill(name = "Keen eye",lvl=3,isPassive=True)
+skill1.save()
+skill2.save()
+skill3.save()
+skill4.save()
+skill1.effect.add(e1)
+skill2.effect.add(e2)
+skill3.effect.add(e3)
+skill4.effect.add(e4)
 skill1.save()
 skill2.save()
 skill3.save()
 skill4.save()
 
 print "Creating Professions..."
-prof1 = Profession(name="Archery",lvl=4)
+prof1 = Profession(name="Archery")
 prof1.save()    # save before creating a many to many relationship
 prof1.skills.add(skill1)
 prof1.save()
@@ -85,7 +93,7 @@ prof1.save()
 prof1.skills.add(skill4)
 prof1.save()
 
-prof2 = Profession(name="Warrior",lvl=4)
+prof2 = Profession(name="Warrior")
 prof2.save()
 prof2.skills.add(skill3)
 prof2.save()
@@ -103,10 +111,12 @@ c2 = Character(username="Enferia",race=race2)
 c2.sp = 0
 c1.save()
 c2.save()  # save before creating a many to many relationship
-c1.profession.add(prof1)
-c2.profession.add(prof2)
-c1.save()
-c2.save()
+
+print "Creating SetProffessions..."
+sp = SetProfessions(owner=c1,profession=prof1,level=5)
+sp.save()
+sp = SetProfessions(owner=c2,profession=prof2,level=6)
+sp.save()
 
 
 print "Creating Stats..."
