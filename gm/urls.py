@@ -1,7 +1,10 @@
 from django.conf.urls import patterns, include, url
-import views
+from gm import views
 
-urlpatterns = patterns('',
+
+urlpatterns = patterns('', url(r'^createQuest/$', views.createQuest, name='createQuest'),
+                           url(r'^createNotes/$', views.createNotes, name='createNotes'),
+                           url(r'^quests/$', views.showQuests, name='showQuests')
 
 
 
