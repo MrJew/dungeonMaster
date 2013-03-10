@@ -48,7 +48,6 @@ def register(request):
 
 
 def describe(request, u_id):
-    print "Describing"
     context = RequestContext(request)
     if request.method == 'POST':
         descform = CharDescForm(data=request.POST)
@@ -57,7 +56,7 @@ def describe(request, u_id):
             u.race = descform.cleaned_data['race']
             u.save()
 
-            return render_to_response('system/main.html', {'master': g, 'reg': register}, context)
+            return render_to_response('system/main.html', context)
         else:
             print descform.errors
     else:
