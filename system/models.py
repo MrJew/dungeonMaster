@@ -15,6 +15,7 @@ class Effect(models.Model):
     def __unicode__(self):
         return self.name
 
+
 # Skills can be used from many profesions
 class Skill(models.Model):
     name = models.CharField(max_length=50)
@@ -25,6 +26,7 @@ class Skill(models.Model):
     def __unicode__(self):
         return self.name
 
+
 # A Profession has many skills that have an effect
 class Profession(models.Model):
     name = models.CharField(max_length=50)
@@ -34,6 +36,7 @@ class Profession(models.Model):
         return self.name
 
 from character.models import Character
+
 
 class SetProfessions(models.Model):
     owner = models.ForeignKey(Character)

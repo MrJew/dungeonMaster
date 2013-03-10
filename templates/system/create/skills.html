@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title></title>
 </head>
 <body>
 <FORM id="eff_crt_form" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ skillform.as_p }}
+
+    {% for field in skillform %}
+        {% if field.label == "Effect" %}
+            </br>
+            <div style="overflow:scroll; width: 200px;height: 100px">
+                {{field}}
+            </div>
+        {% else %}
+            {{field.errors}}
+            {{field.label}}
+            {{field}}
+            {{field.help_text}}
+            </br>
+        {% endif %}
+    {% endfor %}
     <INPUT type="submit" name="submit" value="submit" />
 </FORM>
 </body>

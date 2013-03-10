@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1474c90b-fd0c-4b2f-820e-a8b3ebfadcf1" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/facade/comfunc" afterPath="$PROJECT_DIR$/facade/comfunc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/facade/functions.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/character/models.py" afterPath="$PROJECT_DIR$/character/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/main.css" afterPath="$PROJECT_DIR$/static/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/character/views.py" afterPath="$PROJECT_DIR$/character/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/forms.py" afterPath="$PROJECT_DIR$/system/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/models.py" afterPath="$PROJECT_DIR$/system/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/views.py" afterPath="$PROJECT_DIR$/system/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/system/main.html" afterPath="$PROJECT_DIR$/templates/system/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/system/create/effects.html" afterPath="$PROJECT_DIR$/templates/system/create/effects.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/system/create/prof.html" afterPath="$PROJECT_DIR$/templates/system/create/prof.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/system/create/skills.html" afterPath="$PROJECT_DIR$/templates/system/create/skills.html" />
     </list>
     <ignored path="dungeonMaster.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,10 +57,8 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/system/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="32" selection-start="1624" selection-end="1624" vertical-scroll-proportion="0.678808">
-              <folding>
-                <element signature="e#26#68#0" expanded="true" />
-              </folding>
+            <state line="9" column="32" selection-start="376" selection-end="376" vertical-scroll-proportion="0.14900662">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,7 +95,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+            <state line="15" column="0" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,8 +145,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1871" />
-    <option name="y" value="24" />
+    <option name="x" value="49" />
+    <option name="y" value="-1056" />
     <option name="width" value="1871" />
     <option name="height" value="1056" />
   </component>
@@ -382,8 +384,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1871" y="24" width="1871" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="49" y="-1056" width="1871" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -543,7 +545,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/system/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -564,10 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/system/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="32" selection-start="1624" selection-end="1624" vertical-scroll-proportion="0.678808">
-          <folding>
-            <element signature="e#26#68#0" expanded="true" />
-          </folding>
+        <state line="9" column="32" selection-start="376" selection-end="376" vertical-scroll-proportion="0.14900662">
+          <folding />
         </state>
       </provider>
     </entry>
