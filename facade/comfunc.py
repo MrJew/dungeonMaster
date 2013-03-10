@@ -2,7 +2,7 @@ from character.models import Stats
 import string, operator
 from random import randint
 
-################################################################################################################
+#######################################Common Functions##########################################################
 
 def rpn(s):
     """ RPN calculator that takes a string and returns a result
@@ -11,19 +11,23 @@ def rpn(s):
     while True:
         st = []
         for tk in string.split(s):
-            print tk
             if tk in ops:
-                print "operator"
                 y,x = st.pop(),st.pop()
                 z = ops[tk](x,y)
             else:
-                print "str"
                 z = int(tk)
             st.append(z)
         assert len(st)<=1
         if len(st)==1:
-            print(st.pop())
+            return st.pop()
             break
+
+def getStat(character,ability):
+    values = getValues(character)
+    formString = formulaToString(ability.formula.formula,values)
+    print ability.name,formString
+    result = rpn(formString) + int(ability.level)
+    return result
 
 
 def getValues(c):
@@ -47,11 +51,12 @@ def formulaToString(s,v):
     st = string.split(s)
     final=""
     for i in st:
-        if len(i)>2:
+        if not str.isdigit(str(i)) and i!="+" and i!="-" and i!="*" and i!="/":
             final+=str(v[i])
         else:
             final+=i
         final+=" "
     return final
 
-################################################################################################################
+###########################################Stats Functions##########################################################
+

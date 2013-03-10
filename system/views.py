@@ -1,9 +1,9 @@
 # Create your views here.
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-
-
-from character.models import Stats
+from facade import comfunc
+from character.models import Character,Ability,Stats
+from system.models import SetProfessions,Profession,Skill
 from forms import EffectForm, SkillForm, ProfessionForm
 
 import string
@@ -13,55 +13,34 @@ from random import randint
 
 
 def main(request):
-    print "Tva e viewto na maina"
     context = RequestContext(request)
-    return render_to_response('system/main.html',context)
-
-
-
-def rpn(s):
-    ops = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.div}
-    while True:
-        st = []
-        for tk in string.split(s):
-            print tk
-            if tk in ops:
-                print "operator"
-                y,x = st.pop(),st.pop()
-                z = ops[tk](x,y)
-            else:
-                print "str"
-                z = int(tk)
-            st.append(z)
-        assert len(st)<=1
-        if len(st)==1:
-            print(st.pop())
-            break
-
-
-def getValues(c):
+    c=Character.objects.get(username='Dulan')
     s = Stats.objects.get(character=c)
-    values = {'agi': s.getAgi(),
-              'str': s.getStr(),
-              'int': s.getInt(),
-              'dex': s.getDex(),
-              'vit': s.getVit(),
-              'speed': s.getSpeed(),
-              'beauty': s.getBeauty(),
-              'lvl':s.xp/1000,
-              'dice': randint(1,6)}
-    return values
+    stats = [{'name':"Agility",'stat': s.getAgi()},
+                      {'name':"Strength",'stat': s.getStr()},
+                      {'name':"Inteligence",'stat': s.getInt()},
+                      {'name':"Dexterity",'stat': s.getDex()},
+                      {'name':"Vitality",'stat': s.getVit()},
+                      {'name':"Dexterity",'stat': s.getSpeed()},
+                      {'name':"Beauty",'stat': s.getBeauty()},
+                      {'name':"Level",'stat':s.xp/1000},
+                      ]
 
-def formToString(s,v):
-    st = string.split(s)
-    final=""
-    for i in st:
-        if len(i)>2:
-            final+=str(v[i])
-        else:
-            final+=i
-        final+=" "
-    return final
+    abilities = Ability.objects.all()
+    abList=[]
+    for i in abilities:
+        abList.append({"name":i.name,"value":comfunc.getStat(c,i)})
+
+    skills = []
+    professions = SetProfessions.objects.filter(owner=c)
+    for profession in professions:
+        for skill in profession.profession.skills.all():
+            if skill.lvl<=profession.level:
+                skills.append(skill)
+
+
+    return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"skills":skills},context)
+
 
 
 def crtEff(request):

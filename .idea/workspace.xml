@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1474c90b-fd0c-4b2f-820e-a8b3ebfadcf1" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/facade/comfunc" afterPath="$PROJECT_DIR$/facade/comfunc.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampleData.py" afterPath="$PROJECT_DIR$/sampleData.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/character/models.py" afterPath="$PROJECT_DIR$/character/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/main.css" afterPath="$PROJECT_DIR$/static/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/views.py" afterPath="$PROJECT_DIR$/system/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/system/main.html" afterPath="$PROJECT_DIR$/templates/system/main.html" />
     </list>
     <ignored path="dungeonMaster.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,47 +35,36 @@
       <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/system/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="22" selection-start="1903" selection-end="1903" vertical-scroll-proportion="-0.625">
+            <state line="95" column="27" selection-start="3656" selection-end="3656" vertical-scroll-proportion="-35.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stats.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/character/stats.html">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="14" selection-start="59" selection-end="59" vertical-scroll-proportion="-1.875">
+            <state line="47" column="1" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sampleData.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sampleData.py">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/system/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="13" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.63829786">
+            <state line="47" column="32" selection-start="1624" selection-end="1624" vertical-scroll-proportion="0.678808">
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="e#26#68#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/character/models.py">
+      <file leaf-file-name="comfunc.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/facade/comfunc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="26" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="27" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
+            <state line="39" column="28" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -82,6 +75,37 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="86" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/character/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="21" selection-start="2613" selection-end="2613" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sampleData.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sampleData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="75" column="13" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,30 +123,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/dungeonMaster/settings/george.py" />
-        <option value="$PROJECT_DIR$/dungeonMaster/settings/common.py" />
-        <option value="$PROJECT_DIR$/system/views.py" />
-        <option value="$PROJECT_DIR$/static/main.css" />
         <option value="$PROJECT_DIR$/admin.py" />
         <option value="$PROJECT_DIR$/gm/forms.py" />
         <option value="$PROJECT_DIR$/system/urls.py" />
         <option value="$PROJECT_DIR$/dungeonMaster/urls.py" />
-        <option value="$PROJECT_DIR$/character/views.py" />
         <option value="$PROJECT_DIR$/gm/models.py" />
-        <option value="$PROJECT_DIR$/facade/comfunc" />
         <option value="$PROJECT_DIR$/system/models.py" />
-        <option value="$PROJECT_DIR$/character/models.py" />
-        <option value="$PROJECT_DIR$/templates/system/main.html" />
         <option value="$PROJECT_DIR$/templates/character/stats.html" />
         <option value="$PROJECT_DIR$/sampleData.py" />
+        <option value="$PROJECT_DIR$/character/views.py" />
+        <option value="$PROJECT_DIR$/character/urls.py" />
+        <option value="$PROJECT_DIR$/facade/comfunc" />
+        <option value="$PROJECT_DIR$/character/models.py" />
+        <option value="$PROJECT_DIR$/facade/comfunc.py" />
+        <option value="$PROJECT_DIR$/static/main.css" />
+        <option value="$PROJECT_DIR$/templates/system/main.html" />
+        <option value="$PROJECT_DIR$/system/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1872" />
-    <option name="y" value="-4" />
-    <option name="width" value="1873" />
-    <option name="height" value="1085" />
+    <option name="x" value="-1871" />
+    <option name="y" value="24" />
+    <option name="width" value="1871" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -150,7 +174,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -225,6 +248,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dungeonMaster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dungeonMaster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="facade" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -245,6 +282,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,14 +382,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1872" y="-4" width="1873" height="1085" extended-state="6" />
+    <frame x="-1871" y="24" width="1871" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.184514" sideWeight="0.9700214" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13289401" sideWeight="0.9700214" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -421,11 +459,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dungeonMaster/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="1" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gm/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -448,52 +481,46 @@
         <state line="2" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.03311258" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/views.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/character/stats.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.03311258" />
+        <state line="3" column="14" selection-start="59" selection-end="59" vertical-scroll-proportion="0.05102041">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/character/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.11589404" />
+        <state line="64" column="0" selection-start="2382" selection-end="2382" vertical-scroll-proportion="0.90066224">
+          <folding>
+            <element signature="e#26#61#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/facade/comfunc">
+    <entry file="file://$PROJECT_DIR$/system/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="34" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
+        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.01655629">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/system/main.html">
+    <entry file="file://$PROJECT_DIR$/sampleData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="22" selection-start="1903" selection-end="1903" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/character/stats.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="59" selection-end="59" vertical-scroll-proportion="-1.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="75" column="13" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/character/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="26" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.0">
+        <state line="85" column="21" selection-start="2613" selection-end="2613" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -507,18 +534,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/models.py">
+    <entry file="file://$PROJECT_DIR$/facade/comfunc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
+        <state line="39" column="28" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sampleData.py">
+    <entry file="file://$PROJECT_DIR$/system/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="13" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.63829786">
+        <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/system/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="27" selection-start="3656" selection-end="3656" vertical-scroll-proportion="-35.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="1" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="32" selection-start="1624" selection-end="1624" vertical-scroll-proportion="0.678808">
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#26#68#0" expanded="true" />
           </folding>
         </state>
       </provider>

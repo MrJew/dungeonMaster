@@ -25,15 +25,7 @@ Item_CHOICES=(("Sword","Sword"),
               ("Belt","Belt"),
               ("Other","Other"))
 
-# Create your models here.
-# Ability has a one to many relation with the Formulas
-class Ability(models.Model):
-    name = models.CharField(max_length=50)
-    level = models.IntegerField()
-    formula = models.ForeignKey(Formula)
 
-    def __unicode__(self):
-        return self.name
 
 # Race stores the basic and max stats a character will use
 class Race(models.Model):
@@ -129,6 +121,17 @@ class Inventory(models.Model):
     def __unicode__(self):
         return self.item
 
+from facade import comfunc
+
+# Create your models here.
+# Ability has a one to many relation with the Formulas
+class Ability(models.Model):
+    name = models.CharField(max_length=50)
+    level = models.IntegerField()
+    formula = models.ForeignKey(Formula)
+
+    def __unicode__(self):
+        return self.name
 
 
 

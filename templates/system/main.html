@@ -58,10 +58,32 @@
     <div class="column-fluid">
         <div class="span5">
             <div class="stats">
-                Stats
-                {% block stats %}
+                <div class="row-fluid">
+                    <table class="table table-striped">
+                    <div class="column-fluid">
 
-                {% endblock %}
+                        <tr class="cellstats"><th>Stats</th></tr>
+                        {% for baseStat in stats %}
+                        <tr>
+                            <th>{{ baseStat.name }}</th>
+                            <th>{{ baseStat.stat }}</th>
+                        </tr>
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="column-fluid">
+                        <tr class="cellability"><th>Abilities</th></tr>
+                        {% for ability in abilities %}
+                        <tr>
+                            <th>{{ ability.name }}</th>
+                            <th>{{ ability.value }}</th>
+                        </tr>
+                        {% endfor %}
+
+                    </div>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="span4">
@@ -94,7 +116,9 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="skills">
-                Skills will be here
+                {% for skill in skills %}
+                    {{ skill.name }} - {{ skill.lvl }}
+                {% endfor%}
 
             </div>
         </div>
