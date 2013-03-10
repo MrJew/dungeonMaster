@@ -16,28 +16,33 @@ def register(request):
         uniform = CharForm(data=request.POST)
         if uniform.is_valid():
             if uniform.cleaned_data['type'] == 'h':
-                # create Hero
-                c = Character()
-                c.username = uniform.cleaned_data['username']
-                c.set_password(uniform.cleaned_data['password'])
-                c.email = uniform.cleaned_data['email']
+                if Character.objects.filter(username=uniform.cleaned_data['username']).count() <= 0:
+                    # create Hero
+                    c = Character()
+                    c.username = uniform.cleaned_data['username']
+                    c.set_password(uniform.cleaned_data['password'])
+                    c.email = uniform.cleaned_data['email']
 
-                r = Race.objects.all()[0]
-                c.race = r
+                    r = Race.objects.all()[0]
+                    c.race = r
 
-                c.save()
-                #return render_to_response('register/Char/describe.html', {'char': c, 'reg': register}, context)
-                register = True
-                return HttpResponseRedirect(reverse('character.views.describe', args=(c.id,)))
+                    c.save()
+                    register = True
+                    return HttpResponseRedirect(reverse('character.views.describe', args=(c.id,)))
+                else:
+                    print "Error ? -> existing user"
             else:
-                # create GM -> gm->User
-                g = GM()
-                g.username = uniform.cleaned_data['username']
-                g.set_password(uniform.cleaned_data['password'])
-                g.email = uniform.cleaned_data['email']
-                g.save()
-                register = True
-                return render_to_response('system/main.html', {'master': g, 'reg': register}, context)
+                if Character.objects.filter(username=uniform.cleaned_data['username']).count() <= 0:
+                    # create GM -> gm->User
+                    g = GM()
+                    g.username = uniform.cleaned_data['username']
+                    g.set_password(uniform.cleaned_data['password'])
+                    g.email = uniform.cleaned_data['email']
+                    g.save()
+                    register = True
+                    return render_to_response('system/main.html', {'master': g, 'reg': register}, context)
+                else:
+                    print "Error existing gm"
         else:
             print uniform.errors
     else:
