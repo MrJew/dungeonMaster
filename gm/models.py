@@ -1,5 +1,5 @@
 from django.db import models
-from character.models import *
+from character.models import Character
 from system.models import *
 from character.models import Character
 from django.contrib.auth.models import User, UserManager

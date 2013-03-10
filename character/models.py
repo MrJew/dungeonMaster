@@ -68,7 +68,6 @@ class Character(User):
 # Stats containts the statistics a player can have
 class Stats(models.Model):
     character = models.ForeignKey(Character)
-    level = models.IntegerField(default=0)
     xp = models.IntegerField(default=0)
     str = models.IntegerField()
     strMax = models.IntegerField()
@@ -88,6 +87,27 @@ class Stats(models.Model):
     speedMod = models.IntegerField(default=0)
     beauty = models.IntegerField()
     beautyMod = models.IntegerField(default=0)
+
+    def getStr(self):
+        return self.str + self.strMod
+
+    def getAgi(self):
+        return self.agi + self.agiMod
+
+    def getInt(self):
+        return self.int + self.intMod
+
+    def getDex(self):
+        return self.dex + self.dexMod
+
+    def getBeauty(self):
+        return self.beauty + self.beautyMod
+
+    def getSpeed(self):
+        return self.speed + self.speedMod
+
+    def getVit(self):
+        return self.vitality + self.vitMod
 
 # Items there are 3 types with several subtypes
 class Item(models.Model):
