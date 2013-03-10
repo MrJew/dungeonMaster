@@ -18,7 +18,7 @@ class Skill(models.Model):
     name = models.CharField(max_length=50)
     isPassive = models.BooleanField()
     lvl = models.IntegerField()
-    effect = models.CharField(max_length=50)
+    effect = models.ManyToManyField(Effect)
 
     def __unicode__(self):
         return self.name
