@@ -2,6 +2,7 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 
+
 from character.models import Stats
 from forms import EffectForm, SkillForm, ProfessionForm
 
@@ -10,10 +11,12 @@ import operator
 from random import randint
 
 
+
 def main(request):
     print "Tva e viewto na maina"
     context = RequestContext(request)
     return render_to_response('system/main.html',context)
+
 
 
 def rpn(s):
@@ -104,3 +107,4 @@ def crtProf(request):
         proform = ProfessionForm()
 
     return render_to_response('system/create/prof.html', {'proform': proform}, context)
+
