@@ -1,9 +1,7 @@
-from twisted.internet import default
 from django.db import models
-from system.models import *
-#from gm.models import Quest
+from system.models import Effect,Formula
 from django.contrib.auth.models import User, UserManager
-from system.models import Formula
+
 
 
 Item_CHOICES=(("Sword","Sword"),

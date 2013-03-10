@@ -103,10 +103,6 @@ c2 = Character(username="Enferia",race=race2)
 c2.sp = 0
 c1.save()
 c2.save()  # save before creating a many to many relationship
-c1.profession.add(prof1)
-c2.profession.add(prof2)
-c1.save()
-c2.save()
 
 print "Creating SetProffessions..."
 sp = SetProfessions(owner=c1,profession=prof1,level=5)

@@ -1,4 +1,4 @@
-from character.models import *
+from character.models import Stats
 import string, operator
 from random import randint
 
