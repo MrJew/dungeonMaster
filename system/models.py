@@ -1,4 +1,5 @@
 from django.db import models
+from character.models import Character
 
 # The formula by which a ability/skill is calculated
 class Formula(models.Model):
@@ -26,9 +27,12 @@ class Skill(models.Model):
 # A Profession has many skills that have an effect
 class Profession(models.Model):
     name = models.CharField(max_length=50)
-    lvl = models.IntegerField()
     skills = models.ManyToManyField(Skill)
 
     def __unicode__(self):
         return self.name
 
+class SetProfessions(models.Models):
+    owner = models.ForeignKey(Character)
+    profession = models.ForeignKey(Profession)
+    level = models.IntegerField(default=0)

@@ -76,7 +76,7 @@ skill3.save()
 skill4.save()
 
 print "Creating Professions..."
-prof1 = Profession(name="Archery",lvl=4)
+prof1 = Profession(name="Archery")
 prof1.save()    # save before creating a many to many relationship
 prof1.skills.add(skill1)
 prof1.save()
@@ -85,7 +85,7 @@ prof1.save()
 prof1.skills.add(skill4)
 prof1.save()
 
-prof2 = Profession(name="Warrior",lvl=4)
+prof2 = Profession(name="Warrior")
 prof2.save()
 prof2.skills.add(skill3)
 prof2.save()
@@ -107,6 +107,12 @@ c1.profession.add(prof1)
 c2.profession.add(prof2)
 c1.save()
 c2.save()
+
+print "Creating SetProffessions..."
+sp = SetProfessions(owner=c1,profession=prof1,level=5)
+sp.save()
+sp = SetProfessions(owner=c2,profession=prof2,level=6)
+sp.save()
 
 
 print "Creating Stats..."
