@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c96d1e9e-ba48-414b-b962-f5c4f2c5f8d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/character/create/armor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/character/create/misc.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/character/create/weapon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/character/forms.py" afterPath="$PROJECT_DIR$/character/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/character/urls.py" afterPath="$PROJECT_DIR$/character/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/character/views.py" afterPath="$PROJECT_DIR$/character/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gm/forms.py" afterPath="$PROJECT_DIR$/gm/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gm/views.py" afterPath="$PROJECT_DIR$/gm/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/models.py" afterPath="$PROJECT_DIR$/system/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/views.py" afterPath="$PROJECT_DIR$/system/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/gm/quest/quest.html" afterPath="$PROJECT_DIR$/templates/gm/quest/quest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/gm/questDisplay.html" afterPath="$PROJECT_DIR$/templates/gm/questDisplay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/system/main.html" afterPath="$PROJECT_DIR$/templates/system/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/character/models.py" afterPath="$PROJECT_DIR$/character/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampleData.py" afterPath="$PROJECT_DIR$/sampleData.py" />
     </list>
     <ignored path="dungeonMaster.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,13 +51,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.55975693">
       <split-first>
         <leaf>
-          <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/system/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="76" column="17" selection-start="2839" selection-end="2839" vertical-scroll-proportion="1.3103448">
-                  <folding>
-                    <element signature="e#26#68#0" expanded="true" />
-                  </folding>
+                <state line="17" column="33" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -83,10 +69,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sampleData.py" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="sampleData.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sampleData.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="119" column="25" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.0">
+                <state line="137" column="24" selection-start="3777" selection-end="3777" vertical-scroll-proportion="0.5689655">
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
                   </folding>
@@ -106,7 +92,7 @@
           <file leaf-file-name="comfunc.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/facade/comfunc.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="84" column="27" selection-start="2369" selection-end="2369" vertical-scroll-proportion="0.0">
+                <state line="42" column="0" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
                   <folding>
                     <element signature="e#0#34#0" expanded="true" />
                   </folding>
@@ -117,7 +103,7 @@
           <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/character/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="39" column="34" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.0">
+                <state line="63" column="26" selection-start="1860" selection-end="1860" vertical-scroll-proportion="0.0">
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                   </folding>
@@ -191,8 +177,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1871" />
-    <option name="y" value="24" />
+    <option name="x" value="49" />
+    <option name="y" value="-1056" />
     <option name="width" value="1871" />
     <option name="height" value="1056" />
   </component>
@@ -518,7 +504,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1871" y="24" width="1871" height="1056" extended-state="6" />
+    <frame x="49" y="-1056" width="1871" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -681,38 +667,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/character/models.py">
+    <entry file="file://$PROJECT_DIR$/system/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="34" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state line="17" column="33" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/facade/comfunc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="27" selection-start="2369" selection-end="2369" vertical-scroll-proportion="0.0">
+        <state line="42" column="0" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sampleData.py">
+    <entry file="file://$PROJECT_DIR$/character/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="25" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.0">
+        <state line="63" column="26" selection-start="1860" selection-end="1860" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/views.py">
+    <entry file="file://$PROJECT_DIR$/sampleData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="17" selection-start="2839" selection-end="2839" vertical-scroll-proportion="1.3103448">
+        <state line="137" column="24" selection-start="3777" selection-end="3777" vertical-scroll-proportion="0.5689655">
           <folding>
-            <element signature="e#26#68#0" expanded="true" />
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>

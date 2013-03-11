@@ -149,8 +149,8 @@ sp.save()
 
 
 print "Creating Stats..."
-s1 = Stats(xp=0,hp=race1.hp,character=c1,str=race1.str,strMax=race1.strMax,agi=race1.agi,agiMax=race1.agiMax,int=race1.int,intMax=race1.intMax,dex=race1.dex,dexMax=race1.dexMax,vitality=race1.vitality,speed=race1.speed,beauty=randint(1,18))
-s2 = Stats(xp=0,hp=race2.hp,character=c2,str=race2.str,strMax=race2.strMax,agi=race2.agi,agiMax=race2.agiMax,int=race2.int,intMax=race2.intMax,dex=race2.dex,dexMax=race2.dexMax,vitality=race2.vitality,speed=race2.speed,beauty=randint(1,18))
+s1 = Stats(sp=0,xp=0,hp=race1.hp,character=c1,str=race1.str,strMax=race1.strMax,agi=race1.agi,agiMax=race1.agiMax,int=race1.int,intMax=race1.intMax,dex=race1.dex,dexMax=race1.dexMax,vitality=race1.vitality,speed=race1.speed,beauty=randint(1,18))
+s2 = Stats(sp=0,xp=0,hp=race2.hp,character=c2,str=race2.str,strMax=race2.strMax,agi=race2.agi,agiMax=race2.agiMax,int=race2.int,intMax=race2.intMax,dex=race2.dex,dexMax=race2.dexMax,vitality=race2.vitality,speed=race2.speed,beauty=randint(1,18))
 s1.save()
 s2.save()
 

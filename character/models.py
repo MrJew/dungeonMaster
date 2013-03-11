@@ -47,7 +47,6 @@ class Race(models.Model):
 # Character contains the User model and the objects it's composed of
 class Character(User):
     # default params
-    sp = models.IntegerField(default=0)
     effects = models.ManyToManyField(Effect)
     race = models.ForeignKey(Race)
 
@@ -63,6 +62,7 @@ class Log(models.Model):
 
 # Stats containts the statistics a player can have
 class Stats(models.Model):
+    sp = models.IntegerField(default=0)
     hp = models.IntegerField(default=0)
     hpMod = models.IntegerField(default=0)
     mana = models.IntegerField(default=0)
