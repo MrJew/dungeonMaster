@@ -42,7 +42,8 @@ STATICFILES_DIRS = ("/home/daniel/Documents/DIM3/DungeonMasters/dungeonMaster/st
     # Don't forget to use absolute paths, not relative paths.
 )
 
-MIDDLEWARE_CLASSES = ('django.contrib.sessions.middleware.SessionMiddleware', 'django.contrib.messages.middleware.MessageMiddleware'
+MIDDLEWARE_CLASSES = ('django.contrib.sessions.middleware.SessionMiddleware',
+                      'django.contrib.messages.middleware.MessageMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = ('django.contrib.messages.context_processors.messages',)

@@ -58,5 +58,15 @@ def formulaToString(s,v):
         final+=" "
     return final
 
+def dice(dn=None):
+    if not dn:
+        dn=1
+    total=0
+    for i in range(dn):
+        m=randint(1,6)
+        total+= m
+
+    return total
+
 ###########################################Stats Functions##########################################################
 

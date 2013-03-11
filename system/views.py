@@ -8,6 +8,8 @@ from django.core.management.base import CommandError
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
+
 
 
 from character.models import Stats
@@ -23,14 +25,14 @@ from random import randint
 
 def main(request):
     context = RequestContext(request)
-    c=Character.objects.get(username='Dulan')
+    c = Character.objects.get(pk=request.user.id)
     s = Stats.objects.get(character=c)
     stats = [{'name':"Agility",'stat': s.getAgi()},
                       {'name':"Strength",'stat': s.getStr()},
                       {'name':"Inteligence",'stat': s.getInt()},
                       {'name':"Dexterity",'stat': s.getDex()},
                       {'name':"Vitality",'stat': s.getVit()},
-                      {'name':"Dexterity",'stat': s.getSpeed()},
+                      {'name':"Speed",'stat': s.getSpeed()},
                       {'name':"Beauty",'stat': s.getBeauty()},
                       {'name':"Level",'stat':s.xp/1000},
                       ]
@@ -40,15 +42,17 @@ def main(request):
     for i in abilities:
         abList.append({"name":i.name,"value":comfunc.getStat(c,i)})
 
-    skills = []
+
+    prof = {}
     professions = SetProfessions.objects.filter(owner=c)
     for profession in professions:
         for skill in profession.profession.skills.all():
+            skills = []
             if skill.lvl<=profession.level:
                 skills.append(skill)
+            prof[profession.profession]={"skills":skills,"name":profession.profession.name}
 
-
-    return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"skills":skills},context)
+    return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"prof":prof},context)
 
 
 def crtEff(request):
@@ -139,13 +143,13 @@ def char_login(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_active:
+
                 login(request, user)
-                return HttpResponseRedirect('../main/')
+                return HttpResponseRedirect(reverse("system.views.main",args=()))
             else:
                 return HttpResponse("You're account is disabled")
         else:
-            print "Invalid login"
-            return render_to_response('login/login.html'.context)
+            pass
     else:
         return render_to_response('login/login.html', context)
 

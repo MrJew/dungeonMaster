@@ -13,6 +13,7 @@ Race.objects.all().delete()
 Stats.objects.all().delete()
 GM.objects.all().delete()
 Quest.objects.all().delete()
+Ability.objects.all().delete()
 
 print "Creating Formulas..."
 sw = Formula(name="Swimming",formula="str 2 /")
@@ -70,18 +71,26 @@ skill1 = Skill(name="Rapid Fire",lvl=3,isPassive=False)
 skill2 = Skill(name="Precision Shot",lvl=6,isPassive=False)
 skill3 = Skill(name="Shout",lvl=2,isPassive=False)
 skill4 = Skill(name = "Keen eye",lvl=3,isPassive=True)
+skill5 = Skill(name = "Poison Resistance",lvl=2,isPassive=True)
+skill6 = Skill(name = "Brewing",lvl=0,isPassive=False)
 skill1.save()
 skill2.save()
 skill3.save()
 skill4.save()
+skill5.save()
+skill6.save()
 skill1.effect.add(e1)
 skill2.effect.add(e2)
 skill3.effect.add(e3)
 skill4.effect.add(e4)
+skill5.effect.add(e1)
+skill6.effect.add(e1)
 skill1.save()
 skill2.save()
 skill3.save()
 skill4.save()
+skill5.save()
+skill6.save()
 
 print "Creating Professions..."
 prof1 = Profession(name="Archery")
@@ -98,6 +107,12 @@ prof2.save()
 prof2.skills.add(skill3)
 prof2.save()
 
+prof3 = Profession(name="Alchemy")
+prof3.save()
+prof3.skills.add(skill5)
+prof3.skills.add(skill6)
+prof3.save()
+
 print "Creating Races..."
 race1 = Race(name="Dwarf",str=7,strMax=15,agi=4,agiMax=16,int=6,intMax=18,dex=5,dexMax=17,vitality=3,speed=15)
 race2 = Race(name="Elf",str=5,strMax=16,agi=6,agiMax=18,int=6,intMax=19,dex=6,dexMax=19,vitality=1,speed=18)
@@ -105,15 +120,19 @@ race1.save()
 race2.save()
 
 print "Creating Characters..."
-c1 = Character(username="Dulan",race=race1)
+c1 = Character(username="Dulan",email="dulan@example.com",race=race1)
+c1.set_password("123")
 c1.sp = 0
-c2 = Character(username="Enferia",race=race2)
+c2 = Character(username="Enferia",email="enferia@example.com",race=race2)
 c2.sp = 0
+c2.set_password("123")
 c1.save()
 c2.save()  # save before creating a many to many relationship
 
 print "Creating SetProffessions..."
 sp = SetProfessions(owner=c1,profession=prof1,level=5)
+sp.save()
+sp = SetProfessions(owner=c1,profession=prof3,level=8)
 sp.save()
 sp = SetProfessions(owner=c2,profession=prof2,level=6)
 sp.save()

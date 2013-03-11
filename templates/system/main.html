@@ -59,30 +59,37 @@
         <div class="span5">
             <div class="stats">
                 <div class="row-fluid">
-                    <table class="table table-striped">
-                    <div class="column-fluid">
 
-                        <tr class="cellstats"><th>Stats</th></tr>
+
+                    <div class="char info">
+                        <tabel class=table table-striped">
+                        <tr><th></th></tr>
+                        </tabel>
+                    </div>
+
+
+
+                    <div class="basestats">
+                    <table class="table table-striped">
+                        <tr><th>Stats</th></tr>
                         {% for baseStat in stats %}
                         <tr>
-                            <th>{{ baseStat.name }}</th>
-                            <th>{{ baseStat.stat }}</th>
+                           <td>{{ baseStat.name }}</td>
+                           <td>{{ baseStat.stat }}</td>
                         </tr>
                         {% endfor %}
-
-                    </div>
-
-                    <div class="column-fluid">
-                        <tr class="cellability"><th>Abilities</th></tr>
+                        <tr><th>Abilities</th></tr>
                         {% for ability in abilities %}
                         <tr>
-                            <th>{{ ability.name }}</th>
-                            <th>{{ ability.value }}</th>
+                           <td>{{ ability.name }}</td>
+                           <td>{{ ability.value }}</td>
                         </tr>
                         {% endfor %}
-
-                    </div>
                     </table>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
@@ -119,10 +126,26 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="skills">
-                {% for skill in skills %}
-                    {{ skill.name }} - {{ skill.lvl }}
+                <table><tr>
+                {% for profession in prof %}
+                <td>
+                <div class=profession>
+                    <table class="table table-striped">
+                        <tr><th>{{ profession.name }}</th></tr>
+                        {% for skill in profession.skills.all %}
+                            <tr>
+                                <td>{{ skill.name }}</td>
+                                <td>{{ skill.lvl }}</td>
+                            </tr>
+                        {% endfor%}
+
+                    </table>
+                    </div>
+                </td>
                 {% endfor%}
 
+                </tr>
+                </table>
             </div>
         </div>
     </div>
