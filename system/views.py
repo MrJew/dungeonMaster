@@ -2,9 +2,13 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from facade import comfunc
-from character.models import Character,Ability,Stats
-from system.models import SetProfessions,Profession,Skill
+from character.models import Character, Ability, Stats
+from system.models import SetProfessions, Profession, Skill
 from django.core.management.base import CommandError
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.decorators import login_required
+
 
 from character.models import Stats
 from forms import EffectForm, SkillForm, ProfessionForm
@@ -15,7 +19,6 @@ from facade.functions import checkForFormulaE
 import string
 import operator
 from random import randint
-
 
 
 def main(request):
@@ -46,7 +49,6 @@ def main(request):
 
 
     return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"skills":skills},context)
-
 
 
 def crtEff(request):
@@ -127,4 +129,39 @@ def crtProf(request):
         proform = ProfessionForm()
 
     return render_to_response('system/create/prof.html', {'proform': proform}, context)
+
+
+def char_login(request):
+    context = RequestContext(request)
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('../main/')
+            else:
+                return HttpResponse("You're account is disabled")
+        else:
+            print "Invalid login"
+            return render_to_response('login/login.html'.context)
+    else:
+        return render_to_response('login/login.html', context)
+
+@login_required
+def char_logout(request):
+    context = RequestContext(request)
+    logout(request)
+    return HttpResponseRedirect('../main/')
+
+
+def show_log(request):
+    # define the models !
+    listOf_logs = ""
+    for element in Character.objects.all():
+        listOf_logs+=str(element)
+        listOf_logs+=" </br>"
+    return HttpResponse(listOf_logs)
+
 
