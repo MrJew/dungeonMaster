@@ -34,6 +34,10 @@ bd = Formula(name="BaseDefence",formula="lvl 2 / agi +")
 bd.save()
 st = Formula(name="Stability",formula="lvl 2 / agi +")
 st.save()
+ap = Formula(name="Action Points",formula="speed agi + 2 /")
+empty = Formula(name="hp",formula='0 0 +')
+empty.save()
+
 
 print "Creating Abilities..."
 a = Ability(name=st.name,formula=st,level=0)
@@ -114,8 +118,8 @@ prof3.skills.add(skill6)
 prof3.save()
 
 print "Creating Races..."
-race1 = Race(name="Dwarf",str=7,strMax=15,agi=4,agiMax=16,int=6,intMax=18,dex=5,dexMax=17,vitality=3,speed=15)
-race2 = Race(name="Elf",str=5,strMax=16,agi=6,agiMax=18,int=6,intMax=19,dex=6,dexMax=19,vitality=1,speed=18)
+race1 = Race(name="Dwarf",hp=23,str=7,strMax=15,agi=4,agiMax=16,int=6,intMax=18,dex=5,dexMax=17,vitality=3,speed=15)
+race2 = Race(name="Elf",hp=18,str=5,strMax=16,agi=6,agiMax=18,int=6,intMax=19,dex=6,dexMax=19,vitality=1,speed=18)
 race1.save()
 race2.save()
 
@@ -129,6 +133,12 @@ c2.set_password("123")
 c1.save()
 c2.save()  # save before creating a many to many relationship
 
+print "Creating Logs..."
+l1 = Log(owner=c1,text='')
+l2 = Log(owner=c2,text='')
+l1.save()
+l2.save()
+
 print "Creating SetProffessions..."
 sp = SetProfessions(owner=c1,profession=prof1,level=5)
 sp.save()
@@ -139,8 +149,8 @@ sp.save()
 
 
 print "Creating Stats..."
-s1 = Stats(xp=0,character=c1,str=race1.str,strMax=race1.strMax,agi=race1.agi,agiMax=race1.agiMax,int=race1.int,intMax=race1.intMax,dex=race1.dex,dexMax=race1.dexMax,vitality=race1.vitality,speed=race1.speed,beauty=randint(1,18))
-s2 = Stats(xp=0,character=c2,str=race2.str,strMax=race2.strMax,agi=race2.agi,agiMax=race2.agiMax,int=race2.int,intMax=race2.intMax,dex=race2.dex,dexMax=race2.dexMax,vitality=race2.vitality,speed=race2.speed,beauty=randint(1,18))
+s1 = Stats(xp=0,hp=race1.hp,character=c1,str=race1.str,strMax=race1.strMax,agi=race1.agi,agiMax=race1.agiMax,int=race1.int,intMax=race1.intMax,dex=race1.dex,dexMax=race1.dexMax,vitality=race1.vitality,speed=race1.speed,beauty=randint(1,18))
+s2 = Stats(xp=0,hp=race2.hp,character=c2,str=race2.str,strMax=race2.strMax,agi=race2.agi,agiMax=race2.agiMax,int=race2.int,intMax=race2.intMax,dex=race2.dex,dexMax=race2.dexMax,vitality=race2.vitality,speed=race2.speed,beauty=randint(1,18))
 s1.save()
 s2.save()
 

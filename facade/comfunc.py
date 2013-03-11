@@ -1,11 +1,13 @@
 from character.models import Stats
+from system.models import  Formula
 import string, operator
 from random import randint
 
-#######################################Common Functions##########################################################
+################################Common Functions for stats, formulas and calculations##########################################################
 
 def rpn(s):
-    """ RPN calculator that takes a string and returns a result
+    """
+    RPN calculator that takes a string and returns a result
     """
     ops = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.div}
     while True:
@@ -23,12 +25,49 @@ def rpn(s):
             break
 
 def getStat(character,ability):
-    values = getValues(character)
-    formString = formulaToString(ability.formula.formula,values)
-    print ability.name,formString
-    result = rpn(formString) + int(ability.level)
-    return result
+    """
+    returns the value of an ability for the specified character
+    """
+    return formulaResult(ability.formula.formula,character)
 
+def getChar(character):
+    values = getValues(character)
+    char= {"name":character.username,
+           "xp":values['xp'],
+           "lvl":values['lvl'],
+           "hp":values['hp'],
+           "mana":values['mana'],
+           "sp":values['sp']},
+
+    return char
+
+def hpLvl(character):
+    """
+    gets the ammount of hp character gets per level
+    """
+    stats = Stats(character=character)
+    return dice(int(stats.getStr())/2)/3
+
+def spLvl(character):
+    """
+    gets the amount of skill points character gets per level
+    """
+    stats = Stats(character=character)
+    return dice(int(stats.getInt())/2)/3
+
+def getAP(character):
+    """
+    gets the action points a player has
+    """
+    formula = Formula.objects.get(name="Action Points")
+    return formulaResult(character)
+
+def formulaResult(formula,character):
+    """
+    returns a the result from a fiven formula
+    """
+    values = getValues(character)
+    return rpn(formulaToString(formula,values))
 
 def getValues(c):
     """ Returns in a dictionary the values of a player
@@ -41,24 +80,32 @@ def getValues(c):
               'vit': s.getVit(),
               'speed': s.getSpeed(),
               'beauty': s.getBeauty(),
+              'xp': s.xp,
               'lvl':s.xp/1000,
-              'dice': randint(1,6)}
+              'hp':s.getHP,
+              'mana':s.getMana,
+              'sp': s.sp,
+              'dice': dice(3)}
     return values
 
-def formulaToString(s,v):
-    """ Converts a formula string eg.( str 3 + dex / ) into a understandable string for the rpn calculator
+def formulaToString(formula,values):
     """
-    st = string.split(s)
+    Converts a formula string eg.( str 3 + dex / ) into a understandable string for the rpn calculator
+    """
+    st = string.split(formula)
     final=""
     for i in st:
         if not str.isdigit(str(i)) and i!="+" and i!="-" and i!="*" and i!="/":
-            final+=str(v[i])
+            final+=str(values[i])
         else:
             final+=i
         final+=" "
     return final
 
 def dice(dn=None):
+    """
+    roll any number of six sided dices
+    """
     if not dn:
         dn=1
     total=0
@@ -68,5 +115,5 @@ def dice(dn=None):
 
     return total
 
-###########################################Stats Functions##########################################################
+
 

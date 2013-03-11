@@ -22,11 +22,9 @@
 
 }
 
-.console{
+.consolemap{
     border: 2px solid;
     border-color: black;
-    text-align: center;
-    background-color: #0e90d2;
     height: 700px;
 
 }
@@ -46,4 +44,13 @@
 .profession {
     width: 200px;
     height: 200px;
+}
+
+.console{
+    margin: auto;
+    height: 400px;
+    border-style: outset;
+    background-color: #000000;
+    color: #7cfc00;
+    overflow: auto;
 }
