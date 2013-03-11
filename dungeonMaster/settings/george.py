@@ -45,9 +45,9 @@ STATICFILES_DIRS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    # ...
-
-    # ...
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
     )
 
 INTERNAL_IPS = ('127.0.0.1',)

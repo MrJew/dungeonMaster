@@ -1,0 +1,26 @@
+<HTML>
+<HEADER>
+    <TITLE>DMs login</TITLE>
+</HEADER>
+<BODY>
+<P>
+    {% if user.is_authenticated %}
+    Welcome {{ user.username }}  |
+        <A href="{% url system.views.char_logout %}">Logout</A>
+    {% else %}
+        <A href="{% url character.views.register %}">Register</A> |
+        <FORM id="login_form" method="post">
+               {% csrf_token %}
+               Username:
+            <input type="text" name="username" value="" id="username" size="50" />
+                <br />
+                Password:
+            <input type="password" name="password" value="" id="password" size="50" />
+                <br />
+            <INPUT type="submit" name="submit" value="submit" />
+        </FORM>
+
+    {% endif %}
+</P>
+</BODY>
+</HTML>

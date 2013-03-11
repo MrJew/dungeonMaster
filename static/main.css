@@ -15,7 +15,7 @@
 }
 
 .stats{
-    text-align: center;
+    overflow: auto;
     border: 2px solid;
     border-color: black;
     height: 700px;
@@ -39,10 +39,11 @@
     height:200px;
 }
 
-.cellstats {
-    background-color: #0e90d2;
+.charinfo {
+    margin-bottom: 100px;
 }
 
-.cellability {
-    background-color: #0e90d2;
+.profession {
+    width: 200px;
+    height: 200px;
 }
