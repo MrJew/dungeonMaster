@@ -20,7 +20,7 @@ def createQuest(request):
             quest.save()
             quest.players = form.cleaned_data['players']
             quest.save()
-            return HttpResponseRedirect(reverse('createNotes'))
+            return HttpResponseRedirect(reverse('showQuests'))
         else:
             print form.errors
     else:
@@ -52,6 +52,8 @@ def showQuests(request):
     if request.method == 'POST':
         return HttpResponseRedirect(reverse('createNotes'))
     else:
+        c = Character.objects.get(username='Dulan')
+
         qList = Quest.objects.all()
         quests = []
         for quest in qList:

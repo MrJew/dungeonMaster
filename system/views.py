@@ -28,14 +28,14 @@ def main(request):
     character = Character.objects.get(pk=request.user.id)
     s = Stats.objects.get(character=character)
     stats = [{'name':"Agility",'stat': s.getAgi()},
-                      {'name':"Strength",'stat': s.getStr()},
-                      {'name':"Inteligence",'stat': s.getInt()},
-                      {'name':"Dexterity",'stat': s.getDex()},
-                      {'name':"Vitality",'stat': s.getVit()},
-                      {'name':"Speed",'stat': s.getSpeed()},
-                      {'name':"Beauty",'stat': s.getBeauty()},
-                      {'name':"Level",'stat':s.xp/1000},
-                      ]
+             {'name':"Strength",'stat': s.getStr()},
+             {'name':"Inteligence",'stat': s.getInt()},
+             {'name':"Dexterity",'stat': s.getDex()},
+             {'name':"Vitality",'stat': s.getVit()},
+             {'name':"Speed",'stat': s.getSpeed()},
+             {'name':"Beauty",'stat': s.getBeauty()},
+             {'name':"Level",'stat':s.xp/1000},
+             ]
 
     abilities = Ability.objects.all()
     abList=[]
@@ -125,7 +125,7 @@ def crtProf(request):
                 p.skills = proform.cleaned_data['skills']
                 p.save()
 
-                return  render_to_response('system/main.html', {'proform': proform}, context)
+                return render_to_response('system/main.html', {'proform': proform}, context)
             else:
                 print "Value already exists"
         else:
@@ -168,5 +168,3 @@ def show_log(request):
         listOf_logs+=str(element)
         listOf_logs+=" </br>"
     return HttpResponse(listOf_logs)
-
-
