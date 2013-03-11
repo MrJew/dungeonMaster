@@ -12,6 +12,8 @@ from forms import EffectForm, SkillForm, ProfessionForm
 from models import Effect, Skill, Profession
 from facade.functions import checkForFormulaE
 
+from gm.models import Quest
+
 import string
 import operator
 from random import randint
@@ -20,7 +22,7 @@ from random import randint
 
 def main(request):
     context = RequestContext(request)
-    c=Character.objects.get(username='Dulan')
+    c = Character.objects.get(username='Dulan')
     s = Stats.objects.get(character=c)
     stats = [{'name':"Agility",'stat': s.getAgi()},
                       {'name':"Strength",'stat': s.getStr()},
@@ -43,9 +45,12 @@ def main(request):
         for skill in profession.profession.skills.all():
             if skill.lvl<=profession.level:
                 skills.append(skill)
+    qList = Quest.objects.all()
+    quests = []
+    for quest in qList:
+        quests.append({'title': quest.title, 'snippet': quest.snippet})
 
-
-    return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"skills":skills},context)
+    return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"skills":skills, "quests": quests},context)
 
 
 

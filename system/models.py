@@ -6,6 +6,9 @@ class Formula(models.Model):
     name = models.CharField(max_length=100)
     formula = models.CharField(max_length=100)
 
+    def __unicode__(self):
+        return self.name
+
 
 # An Effect can be given to a character or to skill/ability
 class Effect(models.Model):

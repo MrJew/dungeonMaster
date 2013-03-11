@@ -2,10 +2,11 @@
 from django.http import HttpRequest
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
-from character.forms import CharForm, CharDescForm
+from character.forms import CharForm, CharDescForm, ArmorForm, WeaponForm, MiscForm
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from character.models import Character, Race
+from character.models import Character, Race, Item
+from system.models import Formula
 from gm.models import GM
 
 
@@ -67,3 +68,69 @@ def describe(request, u_id):
         descform = CharDescForm()
 
     return render_to_response('register/char/describe.html', {'descform': descform}, context)
+
+def createArmor(request):
+    context = RequestContext(request)
+    if request.method == 'POST':
+        armorForm = ArmorForm(data=request.POST)
+        if armorForm.is_valid():
+            armor = Item()
+            armor.name = armorForm.cleaned_data['name']
+            armor.weight = armorForm.cleaned_data['weight']
+            armor.defence = armorForm.cleaned_data['defence']
+            armor.type = armorForm.cleaned_data['type']
+            armor.attack = armorForm.cleaned_data['attack']
+            armor.save()
+            armor.effect = armorForm.cleaned_data['effect']
+            armor.save()
+            return HttpResponseRedirect(reverse('createArmor'))
+        else:
+            print armorForm.errors
+    else:
+        armorForm = ArmorForm()
+
+    return render_to_response('character/create/armor.html', {'armorForm': armorForm}, context)
+
+def createWeapon(request):
+    context = RequestContext(request)
+    if request.method == 'POST':
+        weaponForm = WeaponForm(data=request.POST)
+        if weaponForm.is_valid():
+            weapon = Item()
+            weapon.name = weaponForm.cleaned_data['name']
+            weapon.weight = weaponForm.cleaned_data['weight']
+            weapon.type = weaponForm.cleaned_data['type']
+            weapon.ap = weaponForm.cleaned_data['ap']
+            weapon.attack = weaponForm.cleaned_data['attack']
+            weapon.save()
+            weapon.effect = weaponForm.cleaned_data['effect']
+            weapon.save()
+            return HttpResponseRedirect(reverse('createWeapon'))
+        else:
+            print weaponForm.errors
+    else:
+        weaponForm = WeaponForm()
+
+    return render_to_response('character/create/weapon.html', {'weaponForm': weaponForm}, context)
+
+def createMisc(request):
+    context = RequestContext(request)
+    if request.method == 'POST':
+        miscForm = MiscForm(data=request.POST)
+        print "test"
+        if miscForm.is_valid():
+            misc = Item()
+            misc.name = miscForm.cleaned_data['name']
+            misc.weight = miscForm.cleaned_data['weight']
+            misc.type = miscForm.cleaned_data['type']
+            misc.attack = miscForm.cleaned_data['attack']
+            misc.save()
+            misc.effect = miscForm.cleaned_data['effect']
+            misc.save()
+            return HttpResponseRedirect(reverse('createMisc'))
+        else:
+            print miscForm.errors
+    else:
+        miscForm = MiscForm()
+
+    return render_to_response('character/create/misc.html', {'miscForm': miscForm}, context)

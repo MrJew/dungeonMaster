@@ -89,8 +89,14 @@
         <div class="span4">
             <div class="questinv">
                 <div class='row-fluid'>
-                    <div class="quests">
-                        Quests
+                    <p style="font-weight:bold; text-decoration:underline">Your quests:</p>
+                    <div class="quests" style="overflow-y: scroll; width : 500px; height : 250px;">
+                        {% for quest in quests %}
+
+                            {{ quest.title }}<br>
+                            {{ quest.snippet }}<br><br>
+                        {% endfor %}
+
                     </div>
                     <div class="inventory">
                         Inventory
