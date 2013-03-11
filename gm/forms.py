@@ -11,8 +11,10 @@ from django import forms
 
 
 class QuestForm(forms.ModelForm):
-    players = forms.ModelMultipleChoiceField(queryset=Character.objects.all(), widget=CheckboxSelectMultiple)
-    snippet = forms.CharField(widget=Textarea)
+    players = forms.ModelMultipleChoiceField(queryset=Character.objects.all(), help_text="Which heroes will go on this quest?", widget=CheckboxSelectMultiple)
+    snippet = forms.CharField(widget=Textarea, help_text="What adventures does the quest entail?")
+    title = forms.CharField(help_text="What is the title of your quest?")
+    xp = forms.IntegerField(help_text="How much experience does the quest grant?")
     class Meta:
         model = Quest
         fields = ("title", "snippet", "xp", "players")
