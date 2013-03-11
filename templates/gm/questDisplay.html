@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div style="overflow-y: scroll; width : 500px; height : 250px;">
+    {% for quest in quests %}
+        {{ quest.title }}<br>
+        {{ quest.snippet }}<br><br>
+    {% endfor %}
+</div>
+<a href="{% url gm.urls.createQuest %}"> Create new quest </a>
+
+</body>
+</html>
