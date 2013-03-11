@@ -46,7 +46,7 @@
                 <ul class="nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="{% url system.views.char_logout %}">Logout</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -106,16 +106,22 @@
             </div>
         </div>
         <div class="span3">
-            <div class="console">
+            <div class="consolemap">
                 <div class='row-fluid'>
-                    <div class="quests">
+                    <div class="map">
+
+                    </div>
+                    <h5>Console:</h5>
+                    <div class="console">
                         <p>A script on this page starts this clock:</p>
                         <p id="demo"></p>
                         <p id="test"></p>
                         <script src="/static/bootstrap/js/log.update.js"></script>
                     </div>
-                    <div class="inventory">
-                        Console
+                    <h5>Actions:</h5>
+                    <div class="actions">
+                        <button class="btn btn-small" type="button">Roll</button><br>
+                        <button class="btn btn-small" type="button">Attack</button>
                     </div>
                 </div>
 

@@ -26,10 +26,10 @@ Item_CHOICES=(("Sword","Sword"),
               ("Other","Other"))
 
 
-
 # Race stores the basic and max stats a character will use
 class Race(models.Model):
     name = models.CharField(max_length=50)
+    hp = models.IntegerField()
     str = models.IntegerField()
     strMax = models.IntegerField()
     agi = models.IntegerField()
@@ -54,8 +54,19 @@ class Character(User):
     def __unicode__(self):
         return self.username
 
+class Log(models.Model):
+    """
+    Character logs for console are stored here
+    """
+    owner=models.ForeignKey(Character)
+    text = models.TextField(max_length=20000)
+
 # Stats containts the statistics a player can have
 class Stats(models.Model):
+    hp = models.IntegerField(default=0)
+    hpMod = models.IntegerField(default=0)
+    mana = models.IntegerField(default=0)
+    manaMod = models.IntegerField(default=0)
     character = models.ForeignKey(Character)
     xp = models.IntegerField(default=0)
     str = models.IntegerField()
@@ -76,6 +87,12 @@ class Stats(models.Model):
     speedMod = models.IntegerField(default=0)
     beauty = models.IntegerField()
     beautyMod = models.IntegerField(default=0)
+
+    def getHP(self):
+        return self.hp + self.getVit() + self.hpMod
+
+    def getMana(self):
+        return self.mana + self.manaMod
 
     def getStr(self):
         return self.str + self.strMod

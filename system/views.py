@@ -25,8 +25,8 @@ from random import randint
 
 def main(request):
     context = RequestContext(request)
-    c = Character.objects.get(pk=request.user.id)
-    s = Stats.objects.get(character=c)
+    character = Character.objects.get(pk=request.user.id)
+    s = Stats.objects.get(character=character)
     stats = [{'name':"Agility",'stat': s.getAgi()},
                       {'name':"Strength",'stat': s.getStr()},
                       {'name':"Inteligence",'stat': s.getInt()},
@@ -40,11 +40,12 @@ def main(request):
     abilities = Ability.objects.all()
     abList=[]
     for i in abilities:
-        abList.append({"name":i.name,"value":comfunc.getStat(c,i)})
+        abList.append({"name":i.name,"value":comfunc.getStat(character,i)})
 
+    comfunc.getChar(character)
 
     prof = {}
-    professions = SetProfessions.objects.filter(owner=c)
+    professions = SetProfessions.objects.filter(owner=character)
     for profession in professions:
         for skill in profession.profession.skills.all():
             skills = []
@@ -157,7 +158,7 @@ def char_login(request):
 def char_logout(request):
     context = RequestContext(request)
     logout(request)
-    return HttpResponseRedirect('../main/')
+    return HttpResponseRedirect(reverse("system.views.char_login",args=()))
 
 
 def show_log(request):
