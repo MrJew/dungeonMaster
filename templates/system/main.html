@@ -61,7 +61,7 @@
                 <div class="row-fluid">
 
 
-                    <div id="stats" class="char info">
+                    <div id="stats" class="charinfo">
                         <table class="table table-striped" >
                         <tr>
                             <td><b>{{ char.name }}</b></td><td>{{ char.lvl }}</td><td></td>
@@ -82,8 +82,8 @@
                             <th><b>Skill Points</b></th><td>{{ char.sp }}<td></td>
                         </tr>
                         </table>
-                    </div>
 
+                    </div>
 
 
                     <div class="basestats">
@@ -93,7 +93,11 @@
                         <tr>
                            <td>{{ baseStat.name }}</td>
                            <td>{{ baseStat.stat }}</td>
-                           <td></td>
+                           <td>
+                               <form class="form-inline" method="POST" action="{% url system.views.statup baseStat.name %}">
+                                   <button style="width:120px;" class="btn btm-small" type="submit" value="submit">Level Up</button>
+                               </form>
+                           </td>
                         </tr>
                         {% endfor %}
                         <tr><th>Abilities</th><td></td><td></td></tr>
@@ -102,6 +106,7 @@
                            <td>{{ ability.name }}</td>
                            <td>{{ ability.value }}</td>
                            <td><button style="width:120px;" onclick="action( '{{ability.name}}' )" class="btn btn-small" type="button">{{ ability.name }}</button><br></td>
+
                         </tr>
                         {% endfor %}
                     </table>

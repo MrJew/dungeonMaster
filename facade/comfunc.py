@@ -79,12 +79,12 @@ def getBaseStats(character):
     s = Stats.objects.get(character=character)
     stats = [{'name':"Agility",'stat': s.getAgi()},
              {'name':"Strength",'stat': s.getStr()},
-             {'name':"Inteligence",'stat': s.getInt()},
+             {'name':"Intelligence",'stat': s.getInt()},
              {'name':"Dexterity",'stat': s.getDex()},
              {'name':"Vitality",'stat': s.getVit()},
              {'name':"Speed",'stat': s.getSpeed()},
              {'name':"Beauty",'stat': s.getBeauty()},
-             {'name':"Level",'stat':s.xp/1000},
+
              ]
     return stats
 

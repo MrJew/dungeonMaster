@@ -76,3 +76,10 @@
     color: #7cfc00;
     overflow-y: scroll;
 }
+
+.players{
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    overflow-y:scroll;
+}

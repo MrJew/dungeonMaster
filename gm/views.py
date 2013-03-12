@@ -6,7 +6,7 @@ from gm.models import GM, Notes, Quest
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from character.models import *
-
+from facade.comfunc import *
 
 def createQuest(request):
     context = RequestContext(request)
@@ -81,6 +81,9 @@ def createNotes(request):
     return render_to_response('gm/notes/notes.html', {'form': form}, context)
 
 def editNotes(request,notes_id):
+    """
+    edit your own notes
+    """
     context = RequestContext(request)
     notes = Notes.objects.get(pk=notes_id)
     if request.POST.get('submit'):
@@ -111,6 +114,9 @@ def giveItem(request,player_id):
     return HttpResponseRedirect(reverse('maingm'))
 
 def giveEffect(request,player_id):
+    """
+    gm gives effects to a player
+    """
     context = RequestContext(request)
     effect_id = request.POST.get('effect',False)
     effect = Item.objects.get(pk=effect_id)
@@ -119,3 +125,20 @@ def giveEffect(request,player_id):
     character.effects.add(effect)
     character.save()
     return HttpResponseRedirect(reverse('maingm'))
+
+def giveXP(request,player_id):
+    """
+    gm gives xp to a player
+    """
+    context = RequestContext(request)
+    ammount = request.POST.get('number',False)
+    character = Character.objects.get(pk=player_id)
+    stats = Stats.objects.get(character=character)
+    lvl = stats.xp/1000
+    stats.xp = stats.xp + ammount
+    if stats.xp/1000 > lvl:
+        stats.sp=stats.sp + spLvl(character)
+
+    stats.save()
+    return HttpResponseRedirect(reverse('maingm'))
+

@@ -72,7 +72,7 @@ class Stats(models.Model):
     character = models.ForeignKey(Character)
     ap = models.IntegerField(default=0)
     apMod = models.IntegerField(default=0)
-    sp = models.IntegerField(default=0)
+    sp = models.IntegerField(default=160)
     hp = models.IntegerField(default=0)
     hpMod = models.IntegerField(default=0)
     hpCur = models.IntegerField(default=0)

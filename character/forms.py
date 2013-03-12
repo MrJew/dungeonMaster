@@ -84,3 +84,5 @@ class MiscForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = ("name", "type", "attack", "effect", "weight")
+
+

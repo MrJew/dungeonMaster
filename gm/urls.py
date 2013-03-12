@@ -9,5 +9,7 @@ urlpatterns = patterns('',
     url(r'^editNote/(?P<note_id>[\d]+)/$', views.editNotes, name='editNotes'),
     url(r'^giveItem/(?P<player_id>[\d]+)/$', views.giveItem, name='giveItem'),
     url(r'^giveEffect/(?P<player_id>[\d]+)/$', views.giveEffect, name='giveEffect'),
+    url(r'^giveXP/(?P<player_id>[\d]+)/$', views.giveXP, name='giveXP'),
+
 
 )

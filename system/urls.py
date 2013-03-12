@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^logout/$', views.char_logout, name="logout"),
     url(r'^log/$', views.show_log, name="log"),
     url(r'^roll/$', views.roll, name="roll"),
+    url(r'^statup/(\w+)/$', views.statup, name="statup"),
 )

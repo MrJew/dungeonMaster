@@ -166,6 +166,16 @@
                                     <button class="btn" type="submit" value="submit">Give Effect</button>
                                 </form>
                             </td></tr>
+
+                            <tr><td>
+                                <form class="form-inline" method="POST" action="{% url gm.views.giveXP player.id %}">
+
+                                        <input type="number" placeholder="Dice Count"><br>
+
+
+                                    <button class="btn" type="submit" value="submit">Give XP</button>
+                                </form>
+                            </td></tr>
                         </table>
                         </div>
                     </td>

@@ -209,3 +209,50 @@ def roll(request):
     writeToLog(character, result)
 
     return HttpResponse()
+
+def updateDex(stats):
+    stats.dex= stats.dex+1
+    stats.sp = stats.sp-stats.dex
+    if stats.sp >= 0:
+        stats.save()
+    return 0
+
+def updateInt(stats):
+    stats.int= stats.int+1
+    stats.sp = stats.sp-stats.int
+    if stats.sp >= 0:
+        stats.save()
+    return 0
+
+def updateAgi(stats):
+    stats.agi= stats.agi+1
+    stats.sp = stats.sp-stats.agi
+    if stats.sp >= 0:
+        stats.save()
+    return 0
+
+def updateStr(stats):
+    stats.str= stats.str+1
+    stats.sp = stats.sp-stats.str
+    if stats.sp >= 0:
+        stats.save()
+    return 0
+
+def statup(request,stat):
+    context = RequestContext(request)
+
+    print stat
+    character=Character.objects.get(pk=request.user.id)
+    stats = Stats.objects.get(character=character)
+    if stat=="Agility":
+        updateAgi(stats)
+    elif stat=="Dexterity":
+        updateDex(stats)
+    elif stat=="Intelligence":
+        updateInt(stats)
+    elif stat=="Strength":
+        updateInt(stats)
+
+
+
+    return HttpResponseRedirect(reverse('main'))
