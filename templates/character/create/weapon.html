@@ -10,7 +10,7 @@
     {% for field in weaponForm %}
 
     {% if field.label == "effect" %}
-    <div style="overflow: scroll; width : 350px; height : 150px;">
+    <div style="overflow-y: scroll; width : 350px; height : 150px;">
         {{ field.help_text }}<br>
         {{ field }}<br><br>
     </div><br>

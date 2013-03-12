@@ -20,7 +20,7 @@ class QuestForm(forms.ModelForm):
         fields = ("title", "snippet", "xp", "players")
 
 class NotesForm(forms.ModelForm):
-    title = forms.CharField(widget=Textarea)
+    title = forms.CharField()
     snippet = forms.CharField(widget=Textarea)
     class Meta:
         model = Notes

@@ -38,7 +38,7 @@ st = Formula(name="Stability",formula="lvl 2 / agi +")
 st.save()
 ap = Formula(name="Action Points",formula="speed agi + 2 /")
 ap.save()
-empty = Formula(name="hp",formula='0 0 +')
+empty = Formula(name="empty",formula='0 0 +')
 empty.save()
 
 
@@ -74,12 +74,12 @@ e4 = Effect(name='Poison',effect=" -10 hp")
 e4.save()
 
 print "Creating Skills..."
-skill1 = Skill(name="Rapid Fire",lvl=3,isPassive=False)
-skill2 = Skill(name="Precision Shot",lvl=6,isPassive=False)
-skill3 = Skill(name="Shout",lvl=2,isPassive=False)
-skill4 = Skill(name = "Keen eye",lvl=3,isPassive=True)
-skill5 = Skill(name = "Poison Resistance",lvl=2,isPassive=True)
-skill6 = Skill(name = "Brewing",lvl=0,isPassive=False)
+skill1 = Skill(name="Rapid Fire",lvl=3,isPassive=False,formula=empty)
+skill2 = Skill(name="Precision Shot",lvl=6,isPassive=False,formula=empty)
+skill3 = Skill(name="Shout",lvl=2,isPassive=False,formula=empty)
+skill4 = Skill(name = "Keen eye",lvl=3,isPassive=True,formula=empty)
+skill5 = Skill(name = "Poison Resistance",lvl=2,isPassive=True,formula=empty)
+skill6 = Skill(name = "Brewing",lvl=0,isPassive=False,formula=empty)
 skill1.save()
 skill2.save()
 skill3.save()
@@ -192,8 +192,10 @@ iv.save()
 
 print "Creating GMs..."
 gm1 = GM(username="Entaria")
+gm1.set_password("123")
 gm1.save()
 gm2 = GM(username="TerrorRealm")
+gm2.set_password("123")
 gm2.save()
 
 print "Creating Quests"

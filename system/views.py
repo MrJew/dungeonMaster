@@ -1,12 +1,9 @@
 # Create your views here.
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from facade import comfunc
 from character.models import Character, Ability, Stats, Log
-
+from gm.models import *
 from facade.comfunc import *
-from character.models import Character, Ability, Stats
-
 from system.models import SetProfessions, Profession, Skill
 from django.core.management.base import CommandError
 from django.contrib.auth import authenticate, login, logout
@@ -60,6 +57,17 @@ def main(request):
                                                   'char':charInfo,"quests":quests,"weapons":weapon,
                                                   'armor':armor,"misc":misc},context)
 
+def maingm(request):
+    context = RequestContext(request)
+    gm = GM.objects.get(pk=request.user.id)
+
+    quests = Quest.objects.filter(gm=gm)
+    notes = Notes.objects.filter(gm=gm)
+    items = Item.objects.all()
+    players = getPlayers(gm)
+    effects = Effect.objects.all()
+
+    return render_to_response('system/maingm.html',{"quests":quests,"notes":notes,"players":players,"items":items,"effects":effects},context)
 
 def crtEff(request):
     """
@@ -162,7 +170,10 @@ def char_login(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse("system.views.main",  args=()))
+                if len(GM.objects.filter(pk=user.id))==0:
+                    return HttpResponseRedirect(reverse("system.views.main",  args=()))
+                else:
+                    return HttpResponseRedirect(reverse("system.views.maingm",  args=()))
             else:
                 return HttpResponse("You're account is disabled")
         else:

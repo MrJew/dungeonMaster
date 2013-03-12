@@ -18,31 +18,13 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
+    height: 570px;
+    border-style: outset;
+    overflow: auto;
     padding-left: 10px;
-    height: 200px;
-    border-style: outset;
-    overflow: auto;
-}
-
-.items{
-    margin: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    height: 370px;
-}
-
-.wam{
-    margin: auto;
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    height: 85px;
-    border-style: outset;
-    overflow: auto;
 
 }
+
 
 .titles{
     font-weight: bold;
@@ -82,15 +64,6 @@
     height:200px;
 }
 
-.charinfo {
-    margin-bottom: 100px;
-}
-
-.profession {
-    width: 200px;
-    height: 200px;
-}
-
 .console{
     margin: auto;
     margin-left: 20px;
@@ -102,14 +75,4 @@
     background-color: #000000;
     color: #7cfc00;
     overflow-y: scroll;
-}
-.charinfo{
-    width: 300px;
-}
-.mana {
-    background-color: #1a677a;
-}
-
-.hp {
-    background-color: #b94a48;
 }

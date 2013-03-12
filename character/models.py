@@ -75,8 +75,10 @@ class Stats(models.Model):
     sp = models.IntegerField(default=0)
     hp = models.IntegerField(default=0)
     hpMod = models.IntegerField(default=0)
+    hpCur = models.IntegerField(default=0)
     mana = models.IntegerField(default=0)
     manaMod = models.IntegerField(default=0)
+    manaCur = models.IntegerField(default=0)
     xp = models.IntegerField(default=0)
     str = models.IntegerField()
     strMax = models.IntegerField()
@@ -142,7 +144,7 @@ class Item(models.Model):
 class Inventory(models.Model):
     owner = models.ForeignKey(Character)
     item = models.ForeignKey(Item)
-    durability = models.IntegerField()
+    durability = models.IntegerField(default=0)
     equiped = models.BooleanField()
     type = models.CharField(max_length=40,choices=item_types)
 
