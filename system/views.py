@@ -204,7 +204,8 @@ def show_log(request):
 
 
 def roll(request):
-    result = "Your mighty result is ["+str(dice(1))+"]</br>"
+    action = request.POST.get('rolls')
+    result = "Your mighty result is ["+str(dice(int(action))) + "]->D" + action + "</br>"
     character = Character.objects.get(pk=request.user.id)
     writeToLog(character, result)
 

@@ -69,33 +69,48 @@ class Log(models.Model):
 
 # Stats containts the statistics a player can have
 class Stats(models.Model):
+    # char
     character = models.ForeignKey(Character)
+    # ap
     ap = models.IntegerField(default=0)
     apMod = models.IntegerField(default=0)
     sp = models.IntegerField(default=160)
+
+    # sp
+    sp = models.IntegerField(default=0)
+    # hp
     hp = models.IntegerField(default=0)
     hpMod = models.IntegerField(default=0)
     hpCur = models.IntegerField(default=0)
+    # mana
     mana = models.IntegerField(default=0)
     manaMod = models.IntegerField(default=0)
     manaCur = models.IntegerField(default=0)
+    # xp
     xp = models.IntegerField(default=0)
+    # str
     str = models.IntegerField()
     strMax = models.IntegerField()
     strMod = models.IntegerField(default=0)
+    # agi
     agi = models.IntegerField()
     agiMax = models.IntegerField()
     agiMod = models.IntegerField(default=0)
+    # int
     int = models.IntegerField()
     intMax = models.IntegerField()
     intMod = models.IntegerField(default=0)
+    # dex
     dex = models.IntegerField()
     dexMax = models.IntegerField()
     dexMod = models.IntegerField(default=0)
+    # vit
     vitality = models.IntegerField()
     vitMod = models.IntegerField(default=0)
+    # speed
     speed = models.IntegerField()
     speedMod = models.IntegerField(default=0)
+    # beauty
     beauty = models.IntegerField()
     beautyMod = models.IntegerField(default=0)
 
@@ -125,6 +140,9 @@ class Stats(models.Model):
 
     def getVit(self):
         return self.vitality + self.vitMod
+
+    def getAp(self):
+        return self.ap + self.apMod
 
 
 

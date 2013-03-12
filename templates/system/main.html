@@ -105,8 +105,12 @@
                         <tr>
                            <td>{{ ability.name }}</td>
                            <td>{{ ability.value }}</td>
+<<<<<<< HEAD
                            <td><button style="width:120px;" onclick="action( '{{ability.name}}' )" class="btn btn-small" type="button">{{ ability.name }}</button><br></td>
 
+=======
+                           <td><button style="width:120px;" onclick="action( '{{ability.name}}',0)" class="btn btn-small" type="button">{{ ability.name }}</button><br></td>
+>>>>>>> 8f579b5a82e196cbe412e5e6dae75bf432c36430
                         </tr>
                         {% endfor %}
                     </table>
@@ -220,13 +224,12 @@
                     </div>
                     <h5>Actions:</h5>
                     <div class="actions">
-                        <button onclick="roll()"  class="btn btn-small" type="button">Roll</button><br>
-                        <button onclick="refreshStats()" class="btn btn-small" type="button">Refresh</button>
+                        <button onclick="refreshStats(0)" class="btn btn-small" type="button">Refresh</button>
                         <form class="form-inline">
-                        <button onclick="roll()"  class="btn" type="button">Roll</button>
-                        <input type="number" placeholder="Dice Count"><br>
+                            <input id="infoHolder" type="number" placeholder="Dice Count"><br>
+                            <button onclick="roll()"  class="btn" type="button">Roll</button>
                         </form>
-                        <button onclick="action('Swimming')" class="btn btn-small" type="button">Attack</button>
+                        <button onclick="refreshStats(1)" class="btn btn-small" type="button">End Turn</button>
                     </div>
                 </div>
 
@@ -249,7 +252,7 @@
                                 {% if skill.isPassive %}
                                     <td></td>
                                 {% else %}
-                                    <td><button onclick="action('{{skill.id}}')" class="btn btn-small" type="button">use</button></td>
+                                    <td><button onclick="action('{{skill.id}}',1)" class="btn btn-small" type="button">use</button></td>
                                 {% endif %}
                             </tr>
                         {% endfor%}

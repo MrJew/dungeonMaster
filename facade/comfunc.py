@@ -131,6 +131,14 @@ def formulaResult(formula,character):
     values = getValues(character)
     return rpn(formulaToString(formula,values))
 
+def formulaResultEffect(formula, character):
+    """
+    returns a the result from a fiven formula
+    """
+    values = getValuesEffect(character)
+    final = rpn(formulaToString(formula, values))
+    return final
+
 def getValues(c):
     """ Returns in a dictionary the values of a player
     """
@@ -143,11 +151,31 @@ def getValues(c):
               'speed': s.getSpeed(),
               'beauty': s.getBeauty(),
               'xp': s.xp,
-              'lvl':s.xp/1000,
-              'hp':s.getHP,
-              'mana':s.getMana,
+              'lvl': s.xp / 1000,
+              'hp': s.getHP,
+              'mana': s.getMana,
               'sp': s.sp,
               'ap': s.ap,
+              'dice': dice(3)}
+    return values
+
+def getValuesEffect(c):
+    """ Returns in a dictionary the values of a player
+    """
+    s = Stats.objects.get(character=c)
+    values = {'agi': s.agiMod,
+              'str': s.strMod,
+              'int': s.intMod,
+              'dex': s.dexMod,
+              'vit': s.vitMod,
+              'speed': s.speedMod,
+              'beauty': s.beautyMod,
+              'xp': s.xp,
+              'lvl': s.xp / 1000,
+              'hp': s.hpCur,
+              'mana': s.manaCur,
+              'sp': s.sp,
+              'ap': s.apMod,
               'dice': dice(3)}
     return values
 

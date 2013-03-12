@@ -5,7 +5,8 @@ from character.forms import CharForm, CharDescForm, ArmorForm, WeaponForm, MiscF
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from character.models import Character, Race, Item, Log, Ability
-from facade.functions import setStats, writeToLog
+from system.models import Skill
+from facade.functions import setStats, writeToLog, setEffects
 from facade.comfunc import formulaResult, dice
 from gm.models import GM
 
@@ -150,30 +151,48 @@ def createMisc(request):
 
 
 def action(request):
-    action = request.POST.get('actid', False)
+    type = request.POST.get('typeid', False)
     character = Character.objects.get(pk=request.user.id)
-    calc = Ability.objects.get(name=action)
-    final = formulaResult(calc.formula.formula, character) + dice(3)
-    result = character.username+ " is using " + str(action) + " with rate of " + str(final) + "</br>"
+    setEffects(character)
+    if type == '0':
+        action = request.POST.get('actid', False)
+        calc = Ability.objects.get(name=action)
+        final = formulaResult(calc.formula.formula, character) + dice(3)
+        result = character.username+ " is using " + str(action) + " with rate of " + str(final) + "</br>"
+    elif type == '1':
+        action = request.POST.get('actid', False)
+        skil = Skill.objects.get(pk=action)
+        print skil.formula.formula
+        calc = formulaResult(skil.formula.formula, character) + dice(3)
+        result = character.username + " is using " + str(skil) + " with rate of " + str(calc) + "</br>"
 
     writeToLog(character, result)
 
     return HttpResponse()
 
-###################################################
-
 
 def refreshStats(request):
-    character = Character.objects.get(pk=request.user.id)
-    s = Stats.objects.get(character=character)
-    result = ""
-    print s.hp
-    s.xp += 1000
-    s.save()
-    print s.hpMod
-    print character
-    result += character.username + "," + str(s.xp / 1000) + "," + str(s.getHP()) + "," + str(s.getMana()) + "," + str(s.xp) + "," + '?' + "," + str(s.sp)
-    print result
+    choice = request.POST.get('actid', False)
+    if choice == '0':
+        character = Character.objects.get(pk=request.user.id)
+        s = Stats.objects.get(character=character)
+        result = ""
+        s.hpCur-=1
+        s.save()
+        result += character.username + "," + str(s.xp / 1000) + "," + str(s.hpCur) + "," + str(s.manaCur) + \
+                  "," + str(s.xp) + "," + str(s.getAp()) + "," + str(s.sp) + "," + str(s.getHP()) + \
+                  "," + str(s.getMana()) + "," + str(s.ap)
+    elif choice == '1':
+        character = Character.objects.get(pk=request.user.id)
+        s = Stats.objects.get(character=character)
+        result = ""
+        s.hpCur = s.getHP()
+        s.manaCur = s.getMana()
+        s.apMod = 0
+        s.save()
+        result += character.username + "," + str(s.xp / 1000) + "," + str(s.hpCur) + "," + str(s.manaCur) + \
+                  "," + str(s.xp) + "," + str(s.getAp()) + "," + str(s.sp) + "," + str(s.getHP()) + \
+                  "," + str(s.getMana()) + "," + str(s.ap)
 
 
     return HttpResponse(result)
