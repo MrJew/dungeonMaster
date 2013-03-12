@@ -119,15 +119,12 @@
                     </div>
                     <h5>Console:</h5>
                     <div class="console">
-                        <p>A script on this page starts this clock:</p>
-                        <p id="demo"></p>
                         <p id="test"></p>
-                        <script src="/static/bootstrap/js/log.update.js"></script>
                     </div>
                     <h5>Actions:</h5>
                     <div class="actions">
-                        <button class="btn btn-small" type="button">Roll</button><br>
-                        <button class="btn btn-small" type="button">Attack</button>
+                        <button onclick="roll()"  class="btn btn-small" type="button">Roll</button><br>
+                        <button onclick="action('Swimming')" class="btn btn-small" type="button">Attack</button>
                     </div>
                 </div>
 
@@ -181,5 +178,6 @@
 <script src="../assets/js/bootstrap-carousel.js"></script>
 <script src="../assets/js/bootstrap-typeahead.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script src="/static/bootstrap/js/funcs.js"></script>
 </body>
 </html>

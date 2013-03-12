@@ -47,7 +47,6 @@ class Race(models.Model):
 # Character contains the User model and the objects it's composed of
 class Character(User):
     # default params
-    sp = models.IntegerField(default=0)
     effects = models.ManyToManyField(Effect)
     race = models.ForeignKey(Race)
 
@@ -58,16 +57,21 @@ class Log(models.Model):
     """
     Character logs for console are stored here
     """
-    owner=models.ForeignKey(Character)
+    owner = models.ForeignKey(Character)
     text = models.TextField(max_length=20000)
+
+    def getText(self):
+        return self.text
 
 # Stats containts the statistics a player can have
 class Stats(models.Model):
+    character = models.ForeignKey(Character)
+
+    sp = models.IntegerField(default=0)
     hp = models.IntegerField(default=0)
     hpMod = models.IntegerField(default=0)
     mana = models.IntegerField(default=0)
     manaMod = models.IntegerField(default=0)
-    character = models.ForeignKey(Character)
     xp = models.IntegerField(default=0)
     str = models.IntegerField()
     strMax = models.IntegerField()
