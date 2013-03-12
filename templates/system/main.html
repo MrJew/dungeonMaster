@@ -62,27 +62,45 @@
 
 
                     <div class="char info">
-                        <tabel class=table table-striped">
-                        <tr><th></th></tr>
-                        </tabel>
+                        <table class="table table-striped" >
+                        <tr>
+                            <td><b>{{ char.name }}</b></td><td>{{ char.lvl }}</td>
+                        </tr>
+                        <tr class="error">
+                            <td><b>Hit Points:</b></td><td>{{ char.hp}}</td>
+                        </tr>
+                        <tr class="info">
+                            <td><b>Mana:</b></td><td>{{ char.mana }}</td>
+                        </tr>
+                        <tr class="warning">
+                            <td><b>XP:</b></td><td>{{ char.xp }}</td>
+                        </tr>
+                        <tr class="success">
+                            <td><b>Action Poitns:</b></td><td>{{ char.ap }}</td>
+                        </tr>
+                        <tr class="sp">
+                            <th><b>Skill Points</b></th><td>{{ char.sp }}</td>
+                        </tr>
+                        </table>
                     </div>
 
 
 
                     <div class="basestats">
                     <table class="table table-striped">
-                        <tr><th>Stats</th></tr>
+                        <tr><th>Stats</th><td></td></tr>
                         {% for baseStat in stats %}
                         <tr>
                            <td>{{ baseStat.name }}</td>
                            <td>{{ baseStat.stat }}</td>
                         </tr>
                         {% endfor %}
-                        <tr><th>Abilities</th></tr>
+                        <tr><th>Abilities</th><td></td></tr>
                         {% for ability in abilities %}
                         <tr>
                            <td>{{ ability.name }}</td>
                            <td>{{ ability.value }}</td>
+                           <td><button onclick="" class="btn btn-small" type="button">{{ ability.name }}</button><br></td>
                         </tr>
                         {% endfor %}
                     </table>
@@ -96,17 +114,17 @@
         <div class="span4">
             <div class="questinv">
                 <div class='row-fluid'>
-                    <p style="font-weight:bold; text-decoration:underline">Your quests:</p>
-                    <div class="quests" style="overflow-y: scroll; width : 500px; height : 250px;">
+                    <div class="titles"><p>Your Quests:</p></div>
+                    <div class="quests">
                         {% for quest in quests %}
 
-                            {{ quest.title }}<br>
-                            {{ quest.snippet }}<br><br>
+                            <b>-{{ quest.title }} - {{ quest.xp }}</b><br>
+                            <p>{{ quest.snippet }}</p>
                         {% endfor %}
 
                     </div>
                     <div class="inventory">
-                        Inventory
+                        <div class="titles"><p>Inventory<p></div>
                     </div>
                 </div>
             </div>
@@ -117,7 +135,7 @@
                     <div class="map">
 
                     </div>
-                    <h5>Console:</h5>
+                    <div class="titles"><p>Console:</p></div>
                     <div class="console">
                         <p id="test"></p>
                     </div>
@@ -140,11 +158,11 @@
                 <td>
                 <div class=profession>
                     <table class="table table-striped">
-                        <tr><th>{{ profession.name }}</th></tr>
-                        {% for skill in profession.skills.all %}
+                        <tr><th>{{ profession.name }}</th><th>{{ profession.lvl }} </th></tr>
+                        {% for skill in profession.skills %}
                             <tr>
                                 <td>{{ skill.name }}</td>
-                                <td>{{ skill.lvl }}</td>
+                                <td></td>
                             </tr>
                         {% endfor%}
 
