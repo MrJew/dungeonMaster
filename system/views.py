@@ -32,15 +32,7 @@ def main(request):
     context = RequestContext(request)
     character = Character.objects.get(pk=request.user.id)
     s = Stats.objects.get(character=character)
-    stats = [{'name':"Agility",'stat': s.getAgi()},
-             {'name':"Strength",'stat': s.getStr()},
-             {'name':"Inteligence",'stat': s.getInt()},
-             {'name':"Dexterity",'stat': s.getDex()},
-             {'name':"Vitality",'stat': s.getVit()},
-             {'name':"Speed",'stat': s.getSpeed()},
-             {'name':"Beauty",'stat': s.getBeauty()},
-             {'name':"Level",'stat':s.xp/1000},
-             ]
+    stats = getBaseStats(character)
 
     abilities = Ability.objects.all()
     abList=[]
@@ -49,6 +41,10 @@ def main(request):
 
     charInfo=getChar(character)
     quests = getQuests(character)
+    armor = getArmor(character)
+    weapon = getWeapon(character)
+    misc = getMisc(character)
+
     prof = []
     professions = SetProfessions.objects.filter(owner=character)
     for profession in professions:
@@ -60,7 +56,9 @@ def main(request):
 
     print prof
 
-    return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"prof":prof,'char':charInfo,"quests":quests},context)
+    return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"prof":prof,
+                                                  'char':charInfo,"quests":quests,"weapons":weapon,
+                                                  'armor':armor,"misc":misc},context)
 
 
 def crtEff(request):

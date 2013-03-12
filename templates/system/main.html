@@ -64,22 +64,22 @@
                     <div class="char info">
                         <table class="table table-striped" >
                         <tr>
-                            <td><b>{{ char.name }}</b></td><td>{{ char.lvl }}</td>
+                            <td><b>{{ char.name }}</b></td><td>{{ char.lvl }}</td><td></td>
                         </tr>
                         <tr class="error">
-                            <td><b>Hit Points:</b></td><td>{{ char.hp}}</td>
+                            <td><b>Hit Points:</b></td><td>{{ char.hp}}</td><td></td>
                         </tr>
                         <tr class="info">
-                            <td><b>Mana:</b></td><td>{{ char.mana }}</td>
+                            <td><b>Mana:</b></td><td>{{ char.mana }}</td><td></td>
                         </tr>
                         <tr class="warning">
-                            <td><b>XP:</b></td><td>{{ char.xp }}</td>
+                            <td><b>XP:</b></td><td>{{ char.xp }}</td><td></td>
                         </tr>
                         <tr class="success">
-                            <td><b>Action Poitns:</b></td><td>{{ char.ap }}</td>
+                            <td><b>Action Poitns:</b></td><td>{{ char.ap }}</td><td></td>
                         </tr>
                         <tr class="sp">
-                            <th><b>Skill Points</b></th><td>{{ char.sp }}</td>
+                            <th><b>Skill Points</b></th><td>{{ char.sp }}<td></td>
                         </tr>
                         </table>
                     </div>
@@ -88,19 +88,20 @@
 
                     <div class="basestats">
                     <table class="table table-striped">
-                        <tr><th>Stats</th><td></td></tr>
+                        <tr><th>Stats</th><td></td><td></td></tr>
                         {% for baseStat in stats %}
                         <tr>
                            <td>{{ baseStat.name }}</td>
                            <td>{{ baseStat.stat }}</td>
+                           <td></td>
                         </tr>
                         {% endfor %}
-                        <tr><th>Abilities</th><td></td></tr>
+                        <tr><th>Abilities</th><td></td><td></td></tr>
                         {% for ability in abilities %}
                         <tr>
                            <td>{{ ability.name }}</td>
                            <td>{{ ability.value }}</td>
-                           <td><button onclick="action( '{{ability.name}}' )" class="btn btn-small" type="button">{{ ability.name }}</button><br></td>
+                           <td><button style="width:120px;" onclick="action( '{{ability.name}}' )" class="btn btn-small" type="button">{{ ability.name }}</button><br></td>
                         </tr>
                         {% endfor %}
                     </table>
@@ -123,8 +124,81 @@
                         {% endfor %}
 
                     </div>
-                    <div class="inventory">
-                        <div class="titles"><p>Inventory<p></div>
+                    <div class="titles"><p>Inventory<p></div>
+                    <div class="items">
+                        <div class="titles-small">Weapons</div>
+                        <div class="wam">
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>Name</td>
+                                    <td></td>
+                                    <td>Dmg</td>
+                                    <td>Armor</td>
+                                    <td>Durab</td>
+                                    <td>Weight</td>
+                                </tr>
+                            {% for a in armor%}
+                                <tr>
+                                    <td>{{a.item.name}}</td>
+                                    <td><button onclick="" class="btn btn-small" type="button">use</button> </td>
+                                    <td>{{a.item.dmg}}</td>
+                                    <td>{{a.item.defence}}</td>
+                                    <td>{{a.durability}}</td>
+                                    <td>{{a.item.weight}}</td>
+                                </tr>
+                            {% endfor %}
+                            </table>
+                        </div>
+                        <div class="titles-small">Armor</div>
+                        <div class="wam">
+                            <table class="table table-striped">
+                            <tr>
+                                <td>Name</td>
+                                <td></td>
+                                <td>Dmg</td>
+                                <td>Armor</td>
+                                <td>Durab</td>
+                                <td>Weight</td>
+                            </tr>
+
+
+                            {% for a in weapons %}
+                            <tr>
+                                <td>{{a.item.name}}</td>
+                                <td></td>
+                                <td>{{a.item.dmg}}</td>
+                                <td>{{a.item.defence}}</td>
+                                <td>{{a.durability}}</td>
+                                <td>{{a.item.weight}}</td>
+
+                            </tr>
+                            {% endfor %}
+                            </table>
+                        </div>
+                        <div class="titles-small">Misc</div>
+                        <div class="wam">
+                            <table class="table table-striped">
+                            <tr>
+                                <td>Name</td>
+                                <td></td>
+                                <td>Dmg</td>
+                                <td>Armor</td>
+                                <td>Durab</td>
+                                <td>Weight</td>
+                            </tr>
+                            {% for a in misc%}
+                            <tr>
+                                <td>{{a.item.name}}</td>
+                                <td><button onclick="" class="btn btn-small" type="button">use</button> </td>
+                                <td>{{a.item.dmg}}</td>
+                                <td>{{a.item.defence}}</td>
+                                <td>{{a.durability}}</td>
+                                <td>{{a.item.weight}}</td>
+
+                            </tr>
+                            {% endfor %}
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,7 +215,10 @@
                     </div>
                     <h5>Actions:</h5>
                     <div class="actions">
-                        <button onclick="roll()"  class="btn btn-small" type="button">Roll</button><br>
+                        <form class="form-inline">
+                        <button onclick="roll()"  class="btn" type="button">Roll</button>
+                        <input type="number" placeholder="Dice Count"><br>
+                        </form>
                         <button onclick="action('Swimming')" class="btn btn-small" type="button">Attack</button>
                     </div>
                 </div>
@@ -162,7 +239,11 @@
                         {% for skill in profession.skills %}
                             <tr>
                                 <td>{{ skill.name }}</td>
-                                <td></td>
+                                {% if skill.isPassive %}
+                                    <td></td>
+                                {% else %}
+                                    <td><button onclick="action('{{skill.id}}')" class="btn btn-small" type="button">use</button></td>
+                                {% endif %}
                             </tr>
                         {% endfor%}
 

@@ -1,4 +1,4 @@
-from character.models import Stats
+from character.models import *
 from system.models import  Formula
 from gm.models import Quest
 import string, operator
@@ -34,6 +34,28 @@ def getStat(character,ability):
 def getQuests(character):
     return Quest.objects.filter(players=character)
 
+def getArmor(character):
+    return Inventory.objects.filter(owner=character,type="A")
+
+def getMisc(character):
+    return Inventory.objects.filter(owner=character,type="M")
+
+def getWeapon(character):
+    return Inventory.objects.filter(owner=character,type="W")
+
+def getBaseStats(character):
+    s = Stats.objects.get(character=character)
+    stats = [{'name':"Agility",'stat': s.getAgi()},
+             {'name':"Strength",'stat': s.getStr()},
+             {'name':"Inteligence",'stat': s.getInt()},
+             {'name':"Dexterity",'stat': s.getDex()},
+             {'name':"Vitality",'stat': s.getVit()},
+             {'name':"Speed",'stat': s.getSpeed()},
+             {'name':"Beauty",'stat': s.getBeauty()},
+             {'name':"Level",'stat':s.xp/1000},
+             ]
+    return stats
+
 def getChar(character):
     values = getValues(character)
     char= {"name":character.username,
@@ -41,7 +63,8 @@ def getChar(character):
            "lvl":values['lvl'],
            "hp":values['hp'],
            "mana":values['mana'],
-           "sp":values['sp']}
+           "sp":values['sp'],
+           "ap":values['ap']}
 
     return char
 
@@ -89,6 +112,7 @@ def getValues(c):
               'hp':s.getHP,
               'mana':s.getMana,
               'sp': s.sp,
+              'ap': s.ap,
               'dice': dice(3)}
     return values
 

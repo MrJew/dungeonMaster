@@ -25,6 +25,10 @@ Item_CHOICES=(("Sword","Sword"),
               ("Belt","Belt"),
               ("Other","Other"))
 
+item_types=(("Armor","A"),
+            ("Weapon","W"),
+            ("Misc","M"))
+
 
 # Race stores the basic and max stats a character will use
 class Race(models.Model):
@@ -66,7 +70,8 @@ class Log(models.Model):
 # Stats containts the statistics a player can have
 class Stats(models.Model):
     character = models.ForeignKey(Character)
-
+    ap = models.IntegerField(default=0)
+    apMod = models.IntegerField(default=0)
     sp = models.IntegerField(default=0)
     hp = models.IntegerField(default=0)
     hpMod = models.IntegerField(default=0)
@@ -138,9 +143,10 @@ class Inventory(models.Model):
     owner = models.ForeignKey(Character)
     item = models.ForeignKey(Item)
     durability = models.IntegerField()
+    equiped = models.BooleanField()
+    type = models.CharField(max_length=40,choices=item_types)
 
-    def __unicode__(self):
-        return self.item
+
 
 from facade import comfunc
 
