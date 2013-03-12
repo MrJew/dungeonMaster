@@ -8,4 +8,6 @@ urlpatterns = patterns('',
     url(r'^createWeapon/$', views.createWeapon, name='createWeapon'),
     url(r'^createMisc/$', views.createMisc, name='createMisc'),
     url(r'^action/$', views.action, name='action'),
+    ####################################################
+    url(r'^refreshstats/$', views.refreshStats, name="refreshstats"),
 )

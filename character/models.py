@@ -120,6 +120,7 @@ class Stats(models.Model):
         return self.vitality + self.vitMod
 
 
+
 class Item(models.Model):
     """Items there are 3 types with several subtypes"""
     name = models.CharField(max_length=50)

@@ -61,7 +61,7 @@
                 <div class="row-fluid">
 
 
-                    <div class="char info">
+                    <div id="stats" class="char info">
                         <table class="table table-striped" >
                         <tr>
                             <td><b>{{ char.name }}</b></td><td>{{ char.lvl }}</td>
@@ -142,7 +142,7 @@
                     <h5>Actions:</h5>
                     <div class="actions">
                         <button onclick="roll()"  class="btn btn-small" type="button">Roll</button><br>
-                        <button onclick="action('Swimming')" class="btn btn-small" type="button">Attack</button>
+                        <button onclick="refreshStats()" class="btn btn-small" type="button">Refresh</button>
                     </div>
                 </div>
 
