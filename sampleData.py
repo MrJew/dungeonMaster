@@ -15,6 +15,7 @@ Stats.objects.all().delete()
 GM.objects.all().delete()
 Quest.objects.all().delete()
 Ability.objects.all().delete()
+Effect.objects.all().delete()
 
 print "Creating Formulas..."
 sw = Formula(name="Swimming",formula="str 2 /")
