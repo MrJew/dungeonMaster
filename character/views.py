@@ -154,8 +154,26 @@ def action(request):
     character = Character.objects.get(pk=request.user.id)
     calc = Ability.objects.get(name=action)
     final = formulaResult(calc.formula.formula, character) + dice(3)
-    result = character.username+ " is " + str(action) + " with rate of " + str(final) + "</br>"
+    result = character.username+ " is using " + str(action) + " with rate of " + str(final) + "</br>"
 
     writeToLog(character, result)
 
     return HttpResponse()
+
+###################################################
+
+
+def refreshStats(request):
+    character = Character.objects.get(pk=request.user.id)
+    s = Stats.objects.get(character=character)
+    result = ""
+    print s.hp
+    s.xp += 1000
+    s.save()
+    print s.hpMod
+    print character
+    result += character.username + "," + str(s.xp / 1000) + "," + str(s.getHP()) + "," + str(s.getMana()) + "," + str(s.xp) + "," + '?' + "," + str(s.sp)
+    print result
+
+
+    return HttpResponse(result)
