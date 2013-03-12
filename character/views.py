@@ -1,16 +1,19 @@
 # Create your views here.
-from django.http import HttpRequest
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
-from character.forms import CharForm, CharDescForm, ArmorForm, WeaponForm, MiscForm
-from django.http import HttpResponseRedirect
+from character.forms import CharForm, CharDescForm, ArmorForm, WeaponForm, MiscForm, Stats
+from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
-from character.models import Character, Race, Item
-from system.models import Formula
+from character.models import Character, Race, Item, Log, Ability
+from facade.functions import setStats, writeToLog
+from facade.comfunc import formulaResult, dice
 from gm.models import GM
 
 
 def register(request):
+    """
+    Register the character (base information -> username, pass, mail)
+    """
     context = RequestContext(request)
     register = False
     if request.method == 'POST':
@@ -53,6 +56,9 @@ def register(request):
 
 
 def describe(request, u_id):
+    """
+    Setting the character race and bonus information
+    """
     context = RequestContext(request)
     if request.method == 'POST':
         descform = CharDescForm(data=request.POST)
@@ -60,8 +66,14 @@ def describe(request, u_id):
             u = Character.objects.get(pk=u_id)
             u.race = descform.cleaned_data['race']
             u.save()
-
-            return render_to_response('system/main.html', context)
+            # Create log
+            l = Log()
+            l.text = ""
+            l.owner = u
+            l.save()
+            # set stats
+            setStats(u)
+            return HttpResponseRedirect(reverse('system.views.main', args=()))
         else:
             print descform.errors
     else:
@@ -113,6 +125,7 @@ def createWeapon(request):
 
     return render_to_response('character/create/weapon.html', {'weaponForm': weaponForm}, context)
 
+
 def createMisc(request):
     context = RequestContext(request)
     if request.method == 'POST':
@@ -134,3 +147,15 @@ def createMisc(request):
         miscForm = MiscForm()
 
     return render_to_response('character/create/misc.html', {'miscForm': miscForm}, context)
+
+
+def action(request):
+    action = request.POST.get('actid', False)
+    character = Character.objects.get(pk=request.user.id)
+    calc = Ability.objects.get(name=action)
+    final = formulaResult(calc.formula.formula, character) + dice(3)
+    result = character.username+ " is " + str(action) + " with rate of " + str(final) + "</br>"
+
+    writeToLog(character, result)
+
+    return HttpResponse()

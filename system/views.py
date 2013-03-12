@@ -1,15 +1,21 @@
 # Create your views here.
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+<<<<<<< HEAD
+from facade import comfunc
+from character.models import Character, Ability, Stats, Log
+=======
 from facade.comfunc import *
 from character.models import Character, Ability, Stats
+>>>>>>> 9de0c3673ee8aa914c32d74188ed1f71108bc6dc
 from system.models import SetProfessions, Profession, Skill
 from django.core.management.base import CommandError
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-
+from facade.comfunc import dice
+from facade.functions import writeToLog
 
 
 from character.models import Stats
@@ -59,6 +65,9 @@ def main(request):
 
 
 def crtEff(request):
+    """
+    Form for creating an effect
+    """
     context = RequestContext(request)
     correct = False
     if request.method == 'POST':
@@ -87,6 +96,9 @@ def crtEff(request):
 
 
 def crtSkill(request):
+    """
+    Form for creating a skill
+    """
     context = RequestContext(request)
     if request.method=='POST':
         skillform = SkillForm(data=request.POST)
@@ -116,6 +128,9 @@ def crtSkill(request):
 
 
 def crtProf(request):
+    """
+    Form for creating a profession
+    """
     context = RequestContext(request)
     if request.method == 'POST':
         proform = ProfessionForm(data=request.POST)
@@ -139,6 +154,9 @@ def crtProf(request):
 
 
 def char_login(request):
+    """
+    login a user character/gm
+    """
     context = RequestContext(request)
     if request.method == 'POST':
         username = request.POST['username']
@@ -146,9 +164,8 @@ def char_login(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_active:
-
                 login(request, user)
-                return HttpResponseRedirect(reverse("system.views.main",args=()))
+                return HttpResponseRedirect(reverse("system.views.main",  args=()))
             else:
                 return HttpResponse("You're account is disabled")
         else:
@@ -158,15 +175,29 @@ def char_login(request):
 
 @login_required
 def char_logout(request):
+    """
+    logout a character/gm
+    """
     context = RequestContext(request)
     logout(request)
-    return HttpResponseRedirect(reverse("system.views.char_login",args=()))
+    return HttpResponseRedirect(reverse("system.views.char_login", args=()))
 
 
 def show_log(request):
+    """
+    Show the log based on the Char ID
+    """
     # define the models !
     listOf_logs = ""
-    for element in Character.objects.all():
-        listOf_logs+=str(element)
-        listOf_logs+=" </br>"
+    for element in Log.objects.all():
+        listOf_logs += str(element.getText())
+        listOf_logs += " </br>"
     return HttpResponse(listOf_logs)
+
+
+def roll(request):
+    result = "Your mighty result is ["+str(dice(1))+"]</br>"
+    character = Character.objects.get(pk=request.user.id)
+    writeToLog(character, result)
+
+    return HttpResponse()

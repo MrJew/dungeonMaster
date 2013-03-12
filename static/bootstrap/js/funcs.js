@@ -1,19 +1,34 @@
 /**
  * Created with PyCharm.
  * User: ivaylo
- * Date: 3/10/13
- * Time: 8:48 PM
+ * Date: 3/11/13
+ * Time: 7:58 PM
  * To change this template use File | Settings | File Templates.
  */
 
-var myVar=setInterval(function(){myTimer()},1000);
+function roll()
+{
+    new $.ajax({
+        type: "GET",
+        url: "/dungeonMaster/roll/",
+        async: true,
+        success: function(response){
+            myTimer()
+        }
+    });
+
+
+}
+
+function action(id)
+{
+    $.post("/dungeonMaster/action/", {actid: id}, function(response){
+        myTimer()
+    })
+}
 
 function myTimer()
 {
-    var d=new Date();
-    var t=d.toLocaleTimeString();
-    document.getElementById("demo").innerHTML=t;
-
     /*add the request and the result from show_log*/
     new $.ajax({
         type: "GET",
