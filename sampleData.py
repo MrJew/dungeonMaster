@@ -172,11 +172,23 @@ w2 = Item(name="bow",type="Bow",dmg=3,weight=4,ap=7,attack=sw)
 w2.save()
 
 print "Creating Inventory..."
-for i in Item.objects.all():
-    iv = Inventory(owner=c1,item=i,durability=20)
-    iv.save()
-    iv = Inventory(owner=c2,item=i,durability=20)
-    iv.save()
+
+iv = Inventory(owner=c1,item=m1,durability=20,type='M',equiped=True)
+iv.save()
+iv = Inventory(owner=c1,item=m2,durability=20,type='M',equiped=True)
+iv.save()
+iv = Inventory(owner=c1,item=a1,durability=20,type='A',equiped=True)
+iv.save()
+iv = Inventory(owner=c1,item=a2,durability=20,type='A',equiped=True)
+iv.save()
+iv = Inventory(owner=c1,item=w1,durability=20,type='W',equiped=True)
+iv.save()
+iv = Inventory(owner=c2,item=m2,durability=20,type='M',equiped=True)
+iv.save()
+iv = Inventory(owner=c2,item=a2,durability=20,type='A',equiped=True)
+iv.save()
+iv = Inventory(owner=c2,item=w2,durability=20,type='W',equiped=True)
+iv.save()
 
 print "Creating GMs..."
 gm1 = GM(username="Entaria")
