@@ -68,11 +68,12 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
+    padding-left: 10px;
     height: 400px;
     border-style: outset;
     background-color: #000000;
     color: #7cfc00;
-    overflow: auto;
+    overflow-y: scroll;
 }
 .charinfo{
     width: 300px;

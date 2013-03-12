@@ -38,6 +38,13 @@ function myTimer()
         success: function(transport)
         {
             document.getElementById("test").innerHTML=transport;
+            scrollable()
         }
     });
+}
+
+function scrollable()
+{
+    var objDiv = document.getElementById("console");
+    objDiv.scrollTop = objDiv.scrollHeight;
 }

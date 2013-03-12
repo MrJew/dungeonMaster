@@ -1,13 +1,12 @@
 # Create your views here.
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-<<<<<<< HEAD
 from facade import comfunc
 from character.models import Character, Ability, Stats, Log
-=======
+
 from facade.comfunc import *
 from character.models import Character, Ability, Stats
->>>>>>> 9de0c3673ee8aa914c32d74188ed1f71108bc6dc
+
 from system.models import SetProfessions, Profession, Skill
 from django.core.management.base import CommandError
 from django.contrib.auth import authenticate, login, logout
