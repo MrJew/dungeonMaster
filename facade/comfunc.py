@@ -1,5 +1,6 @@
 from character.models import Stats
 from system.models import  Formula
+from gm.models import Quest
 import string, operator
 from random import randint
 
@@ -30,6 +31,9 @@ def getStat(character,ability):
     """
     return formulaResult(ability.formula.formula,character)
 
+def getQuests(character):
+    return Quest.objects.filter(players=character)
+
 def getChar(character):
     values = getValues(character)
     char= {"name":character.username,
@@ -37,7 +41,7 @@ def getChar(character):
            "lvl":values['lvl'],
            "hp":values['hp'],
            "mana":values['mana'],
-           "sp":values['sp']},
+           "sp":values['sp']}
 
     return char
 
@@ -60,7 +64,7 @@ def getAP(character):
     gets the action points a player has
     """
     formula = Formula.objects.get(name="Action Points")
-    return formulaResult(character)
+    return formulaResult(formula,character)
 
 def formulaResult(formula,character):
     """

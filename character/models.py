@@ -92,7 +92,7 @@ class Stats(models.Model):
         return self.hp + self.getVit() + self.hpMod
 
     def getMana(self):
-        return self.mana + self.manaMod
+        return self.mana + self.getInt() + self.manaMod
 
     def getStr(self):
         return self.str + self.strMod

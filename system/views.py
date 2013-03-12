@@ -1,7 +1,7 @@
 # Create your views here.
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from facade import comfunc
+from facade.comfunc import *
 from character.models import Character, Ability, Stats
 from system.models import SetProfessions, Profession, Skill
 from django.core.management.base import CommandError
@@ -40,20 +40,22 @@ def main(request):
     abilities = Ability.objects.all()
     abList=[]
     for i in abilities:
-        abList.append({"name":i.name,"value":comfunc.getStat(character,i)})
+        abList.append({"name":i.name,"value":getStat(character,i)})
 
-    comfunc.getChar(character)
-
-    prof = {}
+    charInfo=getChar(character)
+    quests = getQuests(character)
+    prof = []
     professions = SetProfessions.objects.filter(owner=character)
     for profession in professions:
+        skills = []
         for skill in profession.profession.skills.all():
-            skills = []
             if skill.lvl<=profession.level:
                 skills.append(skill)
-            prof[profession.profession]={"skills":skills,"name":profession.profession.name}
+        prof.append({"skills":skills,"name":profession.profession.name,'lvl':profession.level})
 
-    return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"prof":prof},context)
+    print prof
+
+    return render_to_response('system/main.html',{"stats":stats,"abilities":abList,"prof":prof,'char':charInfo,"quests":quests},context)
 
 
 def crtEff(request):

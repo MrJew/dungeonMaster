@@ -9,9 +9,26 @@
 .questinv{
     border: 2px solid;
     border-color: black;
-    text-align: center;
     height: 700px;
 
+}
+
+.quests{
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 300px;
+    border-style: outset;
+    overflow: auto;
+}
+
+.titles{
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .stats{
@@ -48,9 +65,22 @@
 
 .console{
     margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
     height: 400px;
     border-style: outset;
     background-color: #000000;
     color: #7cfc00;
     overflow: auto;
+}
+.charinfo{
+    width: 300px;
+}
+.mana {
+    background-color: #1a677a;
+}
+
+.hp {
+    background-color: #b94a48;
 }
