@@ -1,5 +1,5 @@
 from character.models import Effect
-from models import Skill
+from models import Skill,Formula
 from django import forms
 
 passiv = (('y', 'It is passive'), ('n', 'It is NOT passive'))
@@ -15,6 +15,7 @@ class SkillForm(forms.Form):
                            required=True)
     condition = forms.ChoiceField(choices=passiv)
     lvl_unlock = forms.IntegerField(max_value=10, help_text="Tell us on whoch lvl is this skill unlocked ?")
+    formula = forms.ModelChoiceField(queryset=Formula.objects.all(), help_text="choose the formula for you action")
     effect = forms.ModelMultipleChoiceField(queryset=Effect.objects.all(), help_text="Choose a deadly effect !",
                                             widget=forms.CheckboxSelectMultiple, required=True)
 

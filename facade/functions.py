@@ -1,6 +1,5 @@
-from character.models import Stats
-from facade.comfunc import dice
-from character.models import Log
+from character.models import Stats, Character, Log
+from facade.comfunc import dice, formulaResultEffect
 
 def checkForFormulaE(string):
     """
@@ -52,3 +51,11 @@ def writeToLog(character, result):
     logging = Log.objects.get(owner=character)
     logging.text += result
     logging.save()
+
+
+def setEffects(char):
+    eff = char.effects.all()
+    for e in eff:
+        calc = formulaResultEffect(e.effect, char)
+        print calc
+    print "Eff: "+ str(eff)

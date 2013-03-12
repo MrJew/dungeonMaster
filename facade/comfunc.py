@@ -25,6 +25,23 @@ def rpn(s):
             return st.pop()
             break
 
+def existInPlayers(player,players):
+    for p in players:
+        if p==player:
+            return True
+    return False
+
+def getPlayers(gm):
+    """
+    Gets the players a Gm is working with
+    """
+    players=[]
+    for quest in Quest.objects.filter(gm=gm):
+        for player in quest.players.all():
+            if not existInPlayers(player,players):
+                players.append(player)
+    return players
+
 def getStat(character,ability):
     """
     returns the value of an ability for the specified character
@@ -32,18 +49,33 @@ def getStat(character,ability):
     return formulaResult(ability.formula.formula,character)
 
 def getQuests(character):
+    """
+    gets the quests of a player
+    """
     return Quest.objects.filter(players=character)
 
 def getArmor(character):
+    """
+    gets all the armor type items from a player
+    """
     return Inventory.objects.filter(owner=character,type="A")
 
 def getMisc(character):
+    """
+    gets all the misc type items from a player
+    """
     return Inventory.objects.filter(owner=character,type="M")
 
 def getWeapon(character):
+    """
+    gets all the weapon type items from a player
+    """
     return Inventory.objects.filter(owner=character,type="W")
 
 def getBaseStats(character):
+    """
+    gets the basic statistics of a player
+    """
     s = Stats.objects.get(character=character)
     stats = [{'name':"Agility",'stat': s.getAgi()},
              {'name':"Strength",'stat': s.getStr()},
@@ -57,6 +89,9 @@ def getBaseStats(character):
     return stats
 
 def getChar(character):
+    """
+    get character info statistics
+    """
     values = getValues(character)
     char= {"name":character.username,
            "xp":values['xp'],
@@ -96,6 +131,14 @@ def formulaResult(formula,character):
     values = getValues(character)
     return rpn(formulaToString(formula,values))
 
+def formulaResultEffect(formula, character):
+    """
+    returns a the result from a fiven formula
+    """
+    values = getValuesEffect(character)
+    final = rpn(formulaToString(formula, values))
+    return final
+
 def getValues(c):
     """ Returns in a dictionary the values of a player
     """
@@ -108,11 +151,31 @@ def getValues(c):
               'speed': s.getSpeed(),
               'beauty': s.getBeauty(),
               'xp': s.xp,
-              'lvl':s.xp/1000,
-              'hp':s.getHP,
-              'mana':s.getMana,
+              'lvl': s.xp / 1000,
+              'hp': s.getHP,
+              'mana': s.getMana,
               'sp': s.sp,
               'ap': s.ap,
+              'dice': dice(3)}
+    return values
+
+def getValuesEffect(c):
+    """ Returns in a dictionary the values of a player
+    """
+    s = Stats.objects.get(character=c)
+    values = {'agi': s.agiMod,
+              'str': s.strMod,
+              'int': s.intMod,
+              'dex': s.dexMod,
+              'vit': s.vitMod,
+              'speed': s.speedMod,
+              'beauty': s.beautyMod,
+              'xp': s.xp,
+              'lvl': s.xp / 1000,
+              'hp': s.hpCur,
+              'mana': s.manaCur,
+              'sp': s.sp,
+              'ap': s.apMod,
               'dice': dice(3)}
     return values
 

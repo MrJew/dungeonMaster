@@ -101,7 +101,7 @@
                         <tr>
                            <td>{{ ability.name }}</td>
                            <td>{{ ability.value }}</td>
-                           <td><button style="width:120px;" onclick="action( '{{ability.name}}' )" class="btn btn-small" type="button">{{ ability.name }}</button><br></td>
+                           <td><button style="width:120px;" onclick="action( '{{ability.name}}',0)" class="btn btn-small" type="button">{{ ability.name }}</button><br></td>
                         </tr>
                         {% endfor %}
                     </table>
@@ -137,7 +137,7 @@
                                     <td>Durab</td>
                                     <td>Weight</td>
                                 </tr>
-                            {% for a in armor%}
+                            {% for a in weapons %}
                                 <tr>
                                     <td>{{a.item.name}}</td>
                                     <td><button onclick="" class="btn btn-small" type="button">use</button> </td>
@@ -162,7 +162,7 @@
                             </tr>
 
 
-                            {% for a in weapons %}
+                            {% for a in armor %}
                             <tr>
                                 <td>{{a.item.name}}</td>
                                 <td></td>
@@ -215,13 +215,12 @@
                     </div>
                     <h5>Actions:</h5>
                     <div class="actions">
-                        <button onclick="roll()"  class="btn btn-small" type="button">Roll</button><br>
-                        <button onclick="refreshStats()" class="btn btn-small" type="button">Refresh</button>
+                        <button onclick="refreshStats(0)" class="btn btn-small" type="button">Refresh</button>
                         <form class="form-inline">
-                        <button onclick="roll()"  class="btn" type="button">Roll</button>
-                        <input type="number" placeholder="Dice Count"><br>
+                            <input id="infoHolder" type="number" placeholder="Dice Count"><br>
+                            <button onclick="roll()"  class="btn" type="button">Roll</button>
                         </form>
-                        <button onclick="action('Swimming')" class="btn btn-small" type="button">Attack</button>
+                        <button onclick="refreshStats(1)" class="btn btn-small" type="button">End Turn</button>
                     </div>
                 </div>
 
@@ -244,7 +243,7 @@
                                 {% if skill.isPassive %}
                                     <td></td>
                                 {% else %}
-                                    <td><button onclick="action('{{skill.id}}')" class="btn btn-small" type="button">use</button></td>
+                                    <td><button onclick="action('{{skill.id}}',1)" class="btn btn-small" type="button">use</button></td>
                                 {% endif %}
                             </tr>
                         {% endfor%}

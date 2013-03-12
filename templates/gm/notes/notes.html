@@ -7,8 +7,11 @@
 <FORM id="notes_form" method="post" enctype="multipart/form-data">
 
     {% csrf_token %}
-    {{ form.as_p }}
-    <INPUT type="submit" name="submit" value="Submit" />
+    {% for field in form%}
+        {{field.label}}<br>{{ field }}<br>
+    {% endfor %}
+    <INPUT type="submit" name="submit" value="submit" />
+    <INPUT type="submit" name="cancel" value="cancel" />
 </FORM>
 </body>
 </html>

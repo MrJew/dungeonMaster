@@ -25,6 +25,7 @@ class Skill(models.Model):
     isPassive = models.BooleanField()
     lvl = models.IntegerField()
     effect = models.ManyToManyField(Effect)
+    formula = models.ForeignKey(Formula)
 
     def __unicode__(self):
         return self.name

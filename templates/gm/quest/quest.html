@@ -10,7 +10,7 @@
     {% csrf_token %}
     {% for field in form %}
         {% if field.label == "Players" %}
-            <div style="overflow: scroll; width : 350px; height : 200px;">
+            <div style="overflow-y: scroll; width : 350px; height : 200px;">
             {{ field.help_text }}<br>
             {{ field }}<br>
             </div>
@@ -20,7 +20,8 @@
             {{ field }}<br><br>
         {% endif %}
     {% endfor %}
-    <INPUT type="submit" name="submit" value="Submit" />
+    <INPUT type="submit" name="submit" value="submit" />
+    <INPUT type="submit" name="cancel" value="cancel" />
 </FORM>
 
 </body>
