@@ -21,3 +21,10 @@ execfile('sampleData.py')
 after the population was successful run the server
 
 python manage.py runserver --settings=dungeonMaster.settings.<your filename>.py
+
+================================================================
+
+Link to repo:
+https://github.com/MrJew/dungeonMaster
+
+No other external packages are needed
