@@ -196,10 +196,13 @@ def show_log(request):
     Show the log based on the Char ID
     """
     # define the models !
+    character = Character.objects.get(pk=request.user.id)
     listOf_logs = ""
     for element in Log.objects.all():
-        listOf_logs += str(element.getText())
-        listOf_logs += " </br>"
+        if str(element.owner == character) == "True":
+            listOf_logs += str(element.getText())
+            listOf_logs += " </br>"
+
     return HttpResponse(listOf_logs)
 
 

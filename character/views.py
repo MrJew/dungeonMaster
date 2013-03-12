@@ -151,7 +151,9 @@ def createMisc(request):
 
 
 def action(request):
+    print "Test action"
     type = request.POST.get('typeid', False)
+    print type
     character = Character.objects.get(pk=request.user.id)
     setEffects(character)
     if type == '0':

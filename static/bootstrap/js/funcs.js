@@ -26,7 +26,7 @@ function refreshStats(id){
 
 function action(id, type)
 {
-    $.post("/dungeonMaster/action/", {actid: id, typeid: type}, function(response){
+    $.post("/dungeonMaster/action/", {actid:id,typeid:type}, function(response){
         refreshConsole()
     })
 }
